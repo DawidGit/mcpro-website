@@ -2,6 +2,9 @@
 # Docker Compose - Summit Commercial Construction Website
 # Production deployment configuration
 # =============================================================================
+# Fixed project name so image/network names do not depend on the checkout directory
+name: mcpro-website
+
 services:
   # ---------------------------------------------------------------------------
   # Main Website Service
