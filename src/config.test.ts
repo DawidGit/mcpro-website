@@ -58,12 +58,12 @@ describe('content sections', () => {
     }
   });
 
-  it('has exactly three testimonials in one row', () => {
-    expect(testimonialsConfig.testimonials).toHaveLength(3);
+  it('shows either no testimonials (section hidden) or up to three complete ones', () => {
+    expect(testimonialsConfig.testimonials.length).toBeLessThanOrEqual(3);
     for (const item of testimonialsConfig.testimonials) {
       expect(item.name.trim()).not.toBe('');
+      expect(item.role.trim()).not.toBe('');
       expect(item.quote.trim().length).toBeGreaterThan(20);
-      expect(item.image).toBeTruthy();
     }
   });
 

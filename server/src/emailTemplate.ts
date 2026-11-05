@@ -13,12 +13,17 @@ export interface ContactEmailData {
 }
 
 const PROJECT_TYPE_LABELS: Record<string, string> = {
-  retail: 'Retail Buildout',
+  restaurant: 'Restaurant / Quick-Service',
+  retail: 'Retail & Pharmacy',
+  hospitality: 'Hospitality / Hotel',
+  'bank-office': 'Bank / Office',
+  industrial: 'Industrial',
+  residential: 'Residential',
+  'trade-package': 'Trade Package (Subcontract)',
+  other: 'Other Project',
+  // legacy values from the previous form
   office: 'Office Renovation',
-  industrial: 'Industrial/Warehouse',
   medical: 'Medical Facility',
-  restaurant: 'Restaurant/Food Service',
-  other: 'Other Commercial Project',
 };
 
 export function projectTypeLabel(value: string): string {

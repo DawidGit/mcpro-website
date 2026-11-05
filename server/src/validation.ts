@@ -23,7 +23,11 @@ export const contactFormSchema = z
       .default(''),
     company: z.string().trim().max(120).default(''),
     projectType: z
-      .enum(['retail', 'office', 'industrial', 'medical', 'restaurant', 'other', ''])
+      // 'office' and 'medical' are legacy values kept so cached old pages can still submit.
+      .enum([
+        'restaurant', 'retail', 'hospitality', 'bank-office', 'industrial', 'residential',
+        'trade-package', 'other', 'office', 'medical', '',
+      ])
       .default(''),
     message: z.string().trim().min(10).max(5000),
     'cf-turnstile-response': z.string().min(1),

@@ -413,11 +413,15 @@ export function WhyChooseMe() {
                             : 'text-4xl md:text-5xl lg:text-5xl'
                         }`}
                       >
-                        <Counter
-                          end={stat.value}
-                          suffix={stat.suffix}
-                          shouldAnimate={shouldAnimateStats}
-                        />
+                        {stat.text ? (
+                          <span>{stat.text}</span>
+                        ) : (
+                          <Counter
+                            end={stat.value}
+                            suffix={stat.suffix}
+                            shouldAnimate={shouldAnimateStats}
+                          />
+                        )}
                       </p>
                       <p
                         className={`text-softblack/60 font-body mt-1 ${

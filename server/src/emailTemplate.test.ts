@@ -22,7 +22,7 @@ describe('buildContactEmail', () => {
     expect(text).toContain('dawid@example.com');
     expect(text).toContain('(630) 313-0694');
     expect(text).toContain('Numeritum');
-    expect(text).toContain('Retail Buildout');
+    expect(text).toContain('Retail & Pharmacy');
     expect(text).toContain('Test message about a retail buildout.');
   });
 

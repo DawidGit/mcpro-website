@@ -26,7 +26,7 @@ export function Hero() {
   const [isHamburgerDark, setIsHamburgerDark] = useState(false);
   const isConstructionHero = heroConfig.heroImage.endsWith('/hero-construction2.png');
   const isBuildWithUsText = heroConfig.backgroundText === 'Build with us';
-  const isTrustedContractorText = heroConfig.overlayText === 'Illinois Trusted General Contractor Since 2008';
+  const isCapsOverlay = heroConfig.overlayTextStyle === 'caps';
   const navLogoSrc = `${import.meta.env.BASE_URL}mc-pro-logo.webp`;
   const hasHeroContent = Boolean(heroConfig.backgroundText) || Boolean(heroConfig.heroImage) || heroConfig.navLinks.length > 0;
 
@@ -184,11 +184,11 @@ export function Hero() {
       {heroConfig.overlayText && (
         <div
           ref={overlayTextRef}
-          className="absolute bottom-[calc(12%+122px)] md:bottom-[24%] left-1/2 -translate-x-1/2 z-30 will-change-transform px-4"
+          className="absolute bottom-[calc(12%+122px)] md:bottom-[24%] left-1/2 -translate-x-1/2 z-30 will-change-transform px-4 w-max max-w-[92vw]"
         >
           <p
             className={
-              isTrustedContractorText
+              isCapsOverlay
                 ? 'text-center font-sans text-sm md:text-base uppercase text-white/95 tracking-[0.14em] font-semibold'
                 : 'text-center font-serif italic text-lg md:text-2xl text-white/95 tracking-wide'
             }
