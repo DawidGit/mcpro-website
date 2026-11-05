@@ -1,0 +1,2 @@
+# Normalize line endings to LF (project moved from Windows to WSL)
+* text=auto eol=lf
