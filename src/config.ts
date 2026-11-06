@@ -226,8 +226,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Home",
       title: "Residential Remodeling",
-      image: assetPath("/value-quality.jpg"),
-      imageAlt: "Clean finish detail on a building corner",
+      image: assetPath("/service-residential-remodel.jpg"),
+      imageAlt: "Crew installing floor tile and trim during a home kitchen remodel",
       description:
         "We remodel our own investment properties and bring the same standards to homeowners' projects.",
       bullets: [
