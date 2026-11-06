@@ -184,12 +184,14 @@ export function Services() {
                         : 'md:rounded-tl-[5rem] md:shadow-[28px_-10px_50px_-10px_rgba(0,0,0,0.5),8px_-2px_16px_-4px_rgba(0,0,0,0.3)]'
                     }`}
                   >
-                    <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-dark text-white">
-                      <Icon className="w-6 h-6" strokeWidth={1.5} />
-                    </span>
-                    <h3 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-softblack mb-3">
-                      {service.title}
-                    </h3>
+                    <div className="mb-4 flex items-center gap-4">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-forest-dark text-white">
+                        <Icon className="w-6 h-6" strokeWidth={1.5} />
+                      </span>
+                      <h3 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-softblack leading-tight">
+                        {service.title}
+                      </h3>
+                    </div>
                     <p className="text-sm md:text-base text-softblack/65 font-body leading-relaxed">
                       {service.description}
                     </p>
