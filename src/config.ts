@@ -303,8 +303,8 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
         "Our own trucks, vans, trailers and tools — we bring the dumpster and materials to site and start on schedule.",
     },
     {
-      image: assetPath("/value-quality.jpg"),
-      imageAlt: "Clean concrete corner detail on a finished building",
+      image: assetPath("/feature-progress-updates.jpg"),
+      imageAlt: "MC Pro site lead photographing progress on a commercial interior build-out",
       title: "Daily Progress Updates",
       description:
         "Photo updates after every shift and inspections coordinated as we go, so you always know where the project stands.",
