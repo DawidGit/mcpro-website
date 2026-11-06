@@ -149,8 +149,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Building2",
       title: "Commercial Remodeling",
-      image: assetPath("/service-commercial-buildout.jpg"),
-      imageAlt: "Commercial storefront interior during build-out with ceiling grid, framing and new counters",
+      image: assetPath("/service-commercial-restaurant.jpg"),
+      imageAlt: "Restaurant dining room remodel in progress with new booths, wood paneling and pendant lighting",
       description:
         "Our core business: remodels and build-outs for businesses that cannot afford to close — delivered in full scope of work or by individual trades.",
       bullets: [
