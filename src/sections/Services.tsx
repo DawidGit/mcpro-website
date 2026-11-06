@@ -31,10 +31,15 @@ const iconMap: Record<string, LucideIcon> = {
   Wrench,
 };
 
+/**
+ * Layered service rows: an angled photo with an offset outline frame, a light card that
+ * overlaps the photo, and an oversized outlined index number behind both. Sides alternate
+ * from row to row; on mobile the card overlaps the bottom of the photo.
+ */
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
   const hasServicesContent =
     Boolean(servicesConfig.titleLine1 || servicesConfig.titleLine2Italic) ||
     servicesConfig.services.length > 0;
@@ -56,27 +61,31 @@ export function Services() {
         once: true,
       });
 
-      const cards = gridRef.current?.querySelectorAll('.service-card');
-      if (cards) {
+      // Each row animates on its own as it scrolls into view.
+      const rows = listRef.current?.querySelectorAll<HTMLElement>('.service-row') ?? [];
+      rows.forEach((row) => {
+        const media = row.querySelector('.service-media');
+        const card = row.querySelector('.service-card');
+        const number = row.querySelector('.service-number');
+        const fromLeft = row.dataset.side === 'left';
         ScrollTrigger.create({
-          trigger: gridRef.current,
-          start: 'top 78%',
-          onEnter: () => {
-            gsap.fromTo(
-              cards,
-              { y: 60, opacity: 0 },
-              {
-                y: 0,
-                opacity: 1,
-                duration: 0.9,
-                ease: 'power3.out',
-                stagger: 0.12,
-              }
-            );
-          },
+          trigger: row,
+          start: 'top 80%',
           once: true,
+          onEnter: () => {
+            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            if (media) {
+              tl.fromTo(media, { x: fromLeft ? -60 : 60, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+            }
+            if (card) {
+              tl.fromTo(card, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.6');
+            }
+            if (number) {
+              tl.fromTo(number, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1 }, '-=0.9');
+            }
+          },
         });
-      }
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -88,10 +97,20 @@ export function Services() {
     <section
       ref={sectionRef}
       id="services"
-      className="relative w-full py-24 md:py-32 bg-forest-dark scroll-mt-24"
+      className="relative w-full py-24 md:py-32 bg-forest-dark scroll-mt-24 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div ref={headingRef} className="opacity-0 mb-12 md:mb-16 lg:mb-20">
+      {/* Soft background glows for depth */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 -right-40 h-[32rem] w-[32rem] rounded-full bg-forest-light/40 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-1/2 -left-48 h-[28rem] w-[28rem] rounded-full bg-forest-mid/70 blur-3xl"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+        <div ref={headingRef} className="opacity-0 mb-16 md:mb-24">
           {servicesConfig.subtitle && (
             <p className="text-white/50 text-sm font-body uppercase tracking-widest mb-4">
               {servicesConfig.subtitle}
@@ -117,52 +136,94 @@ export function Services() {
           )}
         </div>
 
-        {/* One row per service: card and photo side by side, sides alternating row to row
-            (stacked on mobile, card first). */}
-        <div ref={gridRef} className="flex flex-col gap-px bg-white/10 w-full">
+        <div ref={listRef} className="flex flex-col gap-24 md:gap-48">
           {servicesConfig.services.map((service, index) => {
             const Icon = iconMap[service.iconName] || Camera;
-            const photoFirst = index % 2 === 1;
+            const mediaLeft = index % 2 === 0;
+            const number = String(index + 1).padStart(2, '0');
             return (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-px">
-                <div
-                  className={`service-card group bg-forest-dark p-6 md:p-10 lg:p-14 opacity-0 transition-all duration-500 hover:bg-forest-mid flex flex-col justify-center ${
-                    service.image ? '' : 'md:col-span-2'
-                  }`}
-                >
-                  <div className="mb-4">
-                    <Icon className="w-8 h-8 text-white/70 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-sans font-semibold text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-white/50 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
-                    {service.description}
-                  </p>
-                  {service.bullets && service.bullets.length > 0 && (
-                    <ul className="mt-4 space-y-2 text-sm text-white/45 font-body leading-snug group-hover:text-white/65 transition-colors duration-300 list-disc pl-4 marker:text-white/35">
-                      {service.bullets.map((item, bulletIndex) => (
-                        <li key={`${index}-${bulletIndex}`}>{item}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+              <article
+                key={index}
+                data-side={mediaLeft ? 'left' : 'right'}
+                className="service-row relative grid grid-cols-1 md:grid-cols-12 items-center"
+              >
                 {service.image && (
                   <div
-                    className={`service-card group relative overflow-hidden bg-forest-mid opacity-0 h-56 sm:h-72 md:h-auto md:min-h-[360px] ${
-                      photoFirst ? 'md:order-first' : ''
+                    className={`service-media opacity-0 relative md:row-start-1 md:col-span-8 ${
+                      mediaLeft ? 'md:col-start-1' : 'md:col-start-5'
                     }`}
                   >
-                    <img
-                      src={service.image}
-                      alt={service.imageAlt ?? ''}
-                      loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    {/* Offset outline frame, shifted to the outer side */}
+                    <div
+                      aria-hidden
+                      className={`absolute inset-0 rounded-[2rem] border border-white/20 -translate-y-3 md:-translate-y-5 ${
+                        mediaLeft ? '-translate-x-3 md:-translate-x-5' : 'translate-x-3 md:translate-x-5'
+                      }`}
                     />
-                    <div className="absolute inset-0 bg-forest-dark/20 group-hover:bg-forest-dark/0 transition-colors duration-500" />
+                    <div
+                      className={`group relative h-64 sm:h-80 md:h-[440px] overflow-hidden rounded-[2rem] ${
+                        mediaLeft
+                          ? '[clip-path:polygon(0_0,100%_0,100%_100%,16%_100%,0_76%)]'
+                          : '[clip-path:polygon(0_0,100%_0,100%_76%,84%_100%,0_100%)]'
+                      }`}
+                    >
+                      <img
+                        src={service.image}
+                        alt={service.imageAlt ?? ''}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-forest-dark/10 to-transparent" />
+                      {/* Outlined index number layered on the photo */}
+                      <span
+                        aria-hidden
+                        className={`service-number pointer-events-none select-none absolute top-4 md:top-6 font-sans font-bold leading-none text-[5rem] md:text-[8.5rem] text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.75)] ${
+                          mediaLeft ? 'left-6 md:left-8' : 'right-6 md:right-8'
+                        }`}
+                      >
+                        {number}
+                      </span>
+                    </div>
                   </div>
                 )}
-              </div>
+
+                <div
+                  className={`service-card opacity-0 relative z-10 md:row-start-1 mx-3 sm:mx-6 md:mx-0 ${
+                    service.image ? '-mt-20 md:mt-0 md:col-span-6' : 'md:col-span-8'
+                  } ${mediaLeft ? 'md:col-start-7' : 'md:col-start-1'}`}
+                >
+                  <div
+                    className={`bg-offwhite text-softblack shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] p-7 sm:p-9 lg:p-11 rounded-3xl md:translate-y-20 ${
+                      mediaLeft ? 'md:rounded-tr-[5rem]' : 'md:rounded-tl-[5rem]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-4 mb-6">
+                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-forest-dark text-white">
+                        <Icon className="w-6 h-6" strokeWidth={1.5} />
+                      </span>
+                      <span className="h-px flex-1 bg-softblack/15" />
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-softblack mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm md:text-base text-softblack/65 font-body leading-relaxed">
+                      {service.description}
+                    </p>
+                    {service.bullets && service.bullets.length > 0 && (
+                      <ul className="mt-6 flex flex-wrap gap-2">
+                        {service.bullets.map((item, bulletIndex) => (
+                          <li
+                            key={`${index}-${bulletIndex}`}
+                            className="rounded-full border border-softblack/12 bg-white px-3.5 py-1.5 text-xs md:text-[0.8rem] font-body text-softblack/75 leading-snug"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </article>
             );
           })}
         </div>
