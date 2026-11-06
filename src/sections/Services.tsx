@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -84,12 +84,6 @@ export function Services() {
 
   if (!hasServicesContent) return null;
 
-  // Each service may be followed by its photo, so cards and photos alternate in the grid
-  // (checkerboard on 3 columns, card + photo per row on 2 columns, stacked on mobile).
-  const cellCount = servicesConfig.services.reduce((n, s) => n + (s.image ? 2 : 1), 0);
-  const gridFillTwoCol = cellCount % 2 === 0 ? 0 : 1;
-  const gridFillThreeCol = (3 - (cellCount % 3)) % 3;
-
   return (
     <section
       ref={sectionRef}
@@ -123,24 +117,26 @@ export function Services() {
           )}
         </div>
 
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-white/10 w-full"
-        >
+        {/* One row per service: card and photo side by side, sides alternating row to row
+            (stacked on mobile, card first). */}
+        <div ref={gridRef} className="flex flex-col gap-px bg-white/10 w-full">
           {servicesConfig.services.map((service, index) => {
             const Icon = iconMap[service.iconName] || Camera;
+            const photoFirst = index % 2 === 1;
             return (
-              <Fragment key={index}>
+              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-px">
                 <div
-                  className="service-card group bg-forest-dark p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-forest-mid cursor-pointer h-full"
+                  className={`service-card group bg-forest-dark p-6 md:p-10 lg:p-14 opacity-0 transition-all duration-500 hover:bg-forest-mid flex flex-col justify-center ${
+                    service.image ? '' : 'md:col-span-2'
+                  }`}
                 >
                   <div className="mb-4">
                     <Icon className="w-8 h-8 text-white/70 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg md:text-xl font-sans font-semibold text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                  <h3 className="text-xl md:text-2xl font-sans font-semibold text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-white/50 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
+                  <p className="text-sm md:text-base text-white/50 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
                     {service.description}
                   </p>
                   {service.bullets && service.bullets.length > 0 && (
@@ -152,7 +148,11 @@ export function Services() {
                   )}
                 </div>
                 {service.image && (
-                  <div className="service-card group relative overflow-hidden bg-forest-mid opacity-0 h-56 sm:h-auto sm:min-h-[280px]">
+                  <div
+                    className={`service-card group relative overflow-hidden bg-forest-mid opacity-0 h-56 sm:h-72 md:h-auto md:min-h-[360px] ${
+                      photoFirst ? 'md:order-first' : ''
+                    }`}
+                  >
                     <img
                       src={service.image}
                       alt={service.imageAlt ?? ''}
@@ -162,23 +162,9 @@ export function Services() {
                     <div className="absolute inset-0 bg-forest-dark/20 group-hover:bg-forest-dark/0 transition-colors duration-500" />
                   </div>
                 )}
-              </Fragment>
+              </div>
             );
           })}
-          {Array.from({ length: gridFillTwoCol }).map((_, i) => (
-            <div
-              key={`grid-pad-2-${i}`}
-              className="hidden sm:block xl:hidden bg-forest-dark"
-              aria-hidden
-            />
-          ))}
-          {Array.from({ length: gridFillThreeCol }).map((_, i) => (
-            <div
-              key={`grid-pad-3-${i}`}
-              className="hidden xl:block bg-forest-dark"
-              aria-hidden
-            />
-          ))}
         </div>
       </div>
 
