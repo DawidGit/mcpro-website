@@ -60,9 +60,7 @@ function buildGraph() {
           latitude: siteConfig.latitude,
           longitude: siteConfig.longitude,
         },
-        hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-          `${siteConfig.streetAddress}, ${siteConfig.addressLocality}, ${siteConfig.addressRegion} ${siteConfig.postalCode}`
-        )}`,
+        hasMap: siteConfig.googleMapsUrl,
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',

@@ -17,6 +17,8 @@ export interface SiteConfig {
   postalCode: string;
   latitude: number;
   longitude: number;
+  /** Google Business Profile link (used as schema.org hasMap) */
+  googleMapsUrl: string;
   sameAs: string[];
 }
 
@@ -36,8 +38,10 @@ export const siteConfig: SiteConfig = {
   addressLocality: "Streamwood",
   addressRegion: "IL",
   postalCode: "60107",
-  latitude: 42.0275,
-  longitude: -88.1768,
+  // Exact pin of the MC PRO, INC Google Business Profile (https://maps.app.goo.gl/3nNP5sw82XaXk8jT9)
+  latitude: 42.0174796,
+  longitude: -88.1488804,
+  googleMapsUrl: "https://maps.app.goo.gl/3nNP5sw82XaXk8jT9",
   sameAs: ["https://mcprogc.com"],
 };
 
@@ -470,6 +474,6 @@ export const contactConfig: ContactConfig = {
   formTitle: "Request a Consultation",
   formDescription: "Fill out the form below and our team will respond within 24 business hours.",
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=724+Bonded+Parkway,+Streamwood,+IL+60107&z=15&output=embed",
+    "https://maps.google.com/maps?q=MC+PRO,+INC,+724+Bonded+Pkwy,+Streamwood,+IL+60107&z=16&output=embed",
   turnstileSiteKey: import.meta.env.VITE_TURNSTILE_SITE_KEY ?? "",
 };
