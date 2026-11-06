@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { introGridConfig } from '../config';
@@ -27,6 +27,28 @@ export function IntroGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
   const descriptionBodyId = useId();
   const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const expandedRef = useRef(false);
+  /** Height of the mission card while collapsed — the collage starts just under it (minus an overlap). */
+  const [collapsedCardHeight, setCollapsedCardHeight] = useState<number | null>(null);
+
+  useEffect(() => {
+    expandedRef.current = descriptionExpanded;
+  }, [descriptionExpanded]);
+
+  useLayoutEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    // Only measure the collapsed state, so expanding the card grows it over the collage
+    // instead of pushing the collage down.
+    const update = () => {
+      if (!expandedRef.current) setCollapsedCardHeight(el.offsetHeight);
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
 
   const descriptionParagraphs = useMemo(
     () =>
@@ -69,9 +91,13 @@ export function IntroGrid() {
           trigger: titleWrap,
           start: 'top 85%',
           onEnter: () => {
-            gsap.to(
+            // fromTo with explicit y: 0 — GSAP reads the CSS translate-y-[110%] as a pixel `y`,
+            // so animating only yPercent would leave the lines hidden.
+            gsap.fromTo(
               [titleLine1Ref.current, titleLine2Ref.current],
+              { y: 0, yPercent: 110 },
               {
+                y: 0,
                 yPercent: 0,
                 duration: 1.1,
                 ease: 'power4.out',
@@ -176,8 +202,8 @@ export function IntroGrid() {
       className="relative w-full pt-0 md:pt-1 pb-24 md:pb-32 bg-white scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* ── Title with split-line mask reveal (narrow); mission text full width like grid below ── */}
-        <div className="mb-16 md:mb-24">
+        {/* ── Title with split-line mask reveal ── */}
+        <div className="mb-10 md:mb-14">
           <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
             <div className="mb-6">
               <div className="overflow-hidden">
@@ -185,7 +211,7 @@ export function IntroGrid() {
                   ref={titleLine1Ref}
                   className="translate-y-[110%]"
                 >
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-softblack tracking-tight">
+                  <span className="block text-3xl md:text-4xl lg:text-5xl leading-[1.2] md:leading-[1.2] lg:leading-[1.2] font-sans font-bold text-softblack tracking-tight">
                     {introGridConfig.titleLine1}
                   </span>
                 </div>
@@ -195,92 +221,93 @@ export function IntroGrid() {
                   ref={titleLine2Ref}
                   className="translate-y-[110%]"
                 >
-                  <span className="block text-3xl md:text-4xl lg:text-5xl font-serif italic font-normal text-softblack/70">
+                  <span className="block text-3xl md:text-4xl lg:text-5xl leading-[1.2] md:leading-[1.2] lg:leading-[1.2] font-serif italic font-normal text-softblack/70">
                     {introGridConfig.titleLine2}
                   </span>
                 </div>
               </div>
             </div>
           </div>
-
-          <div
-            ref={textRef}
-            className="w-full space-y-4 text-left opacity-0"
-          >
-            {introGridConfig.descriptionHeading && (
-              <h3 className="text-center font-sans font-bold text-softblack text-xl md:text-2xl tracking-tight mb-2">
-                {introGridConfig.descriptionHeading}
-              </h3>
-            )}
-            <div className="relative">
-              <div
-                id={descriptionBodyId}
-                className="space-y-4"
-              >
-                {visibleDescriptionParagraphs.map((para, i) => (
-                  <p
-                    key={i}
-                    className="text-base md:text-lg text-softblack/60 font-body leading-relaxed"
-                  >
-                    {para}
-                  </p>
-                ))}
-              </div>
-              {!descriptionExpanded && descriptionIsCollapsible && (
-                <div
-                  className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"
-                  aria-hidden
-                />
-              )}
-            </div>
-            {descriptionIsCollapsible && (
-              <div className="mt-4 flex justify-center">
-                <button
-                  type="button"
-                  className="text-sm md:text-base font-body font-semibold text-softblack/70 hover:text-softblack underline underline-offset-4 decoration-softblack/30 hover:decoration-softblack transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-softblack/40 rounded-sm"
-                  aria-expanded={descriptionExpanded}
-                  aria-controls={descriptionBodyId}
-                  onClick={() => {
-                    setDescriptionExpanded((prev) => !prev);
-                    requestAnimationFrame(() => ScrollTrigger.refresh());
-                  }}
-                >
-                  {descriptionExpanded ? readLessLabel : readMoreLabel}
-                </button>
-              </div>
-            )}
-          </div>
         </div>
 
-        {/* ── Masonry Grid ── */}
+        {/* Mission card and collage share one grid cell: the card sits on top and overlaps the
+            collage's top edge; when expanded it grows down over the collage. */}
         <div
-          ref={gridRef}
-          className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[200px] md:auto-rows-[280px]"
+          className="grid"
+          style={{ '--card-h': `${collapsedCardHeight ?? 0}px` } as CSSProperties}
         >
-          {introGridConfig.portfolioImages.map((image, index) => (
+          <div
+            ref={cardRef}
+            className="[grid-area:1/1] self-start relative z-10 w-full max-w-4xl mx-auto px-1 sm:px-0"
+          >
             <div
-              key={index}
-              className={`grid-item relative overflow-hidden rounded-lg group cursor-pointer opacity-0 ${
-                index === 0 ? 'md:col-span-1 md:row-span-2' : ''
-              } ${index === 3 ? 'row-span-2' : ''}`}
+              ref={textRef}
+              className="opacity-0 bg-offwhite text-softblack rounded-3xl md:rounded-tr-[5rem] p-7 sm:p-9 lg:p-12 shadow-[0_28px_60px_-18px_rgba(0,0,0,0.45),0_8px_18px_-8px_rgba(0,0,0,0.25)]"
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-full object-cover will-change-transform"
-                loading="lazy"
-              />
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-500" />
-
-              {/* Viewfinder corners on hover */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-white/0 group-hover:border-white/80 transition-all duration-500" />
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-white/0 group-hover:border-white/80 transition-all duration-500" />
-              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-white/0 group-hover:border-white/80 transition-all duration-500" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-white/0 group-hover:border-white/80 transition-all duration-500" />
+              {introGridConfig.descriptionHeading && (
+                <h3 className="font-sans font-bold text-softblack text-2xl md:text-3xl tracking-tight mb-5">
+                  {introGridConfig.descriptionHeading}
+                </h3>
+              )}
+              <div className="relative">
+                <div id={descriptionBodyId} className="space-y-4">
+                  {visibleDescriptionParagraphs.map((para, i) => (
+                    <p
+                      key={i}
+                      className="text-base md:text-lg text-softblack/65 font-body leading-relaxed"
+                    >
+                      {para}
+                    </p>
+                  ))}
+                </div>
+                {!descriptionExpanded && descriptionIsCollapsible && (
+                  <div
+                    className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-offwhite to-transparent"
+                    aria-hidden
+                  />
+                )}
+              </div>
+              {descriptionIsCollapsible && (
+                <div className="mt-6">
+                  <button
+                    type="button"
+                    className="inline-flex items-center gap-2 rounded-full bg-forest-dark px-5 py-2.5 text-sm font-body font-semibold text-white hover:bg-forest-mid transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-dark"
+                    aria-expanded={descriptionExpanded}
+                    aria-controls={descriptionBodyId}
+                    onClick={() => {
+                      setDescriptionExpanded((prev) => !prev);
+                      requestAnimationFrame(() => ScrollTrigger.refresh());
+                    }}
+                  >
+                    {descriptionExpanded ? readLessLabel : readMoreLabel}
+                  </button>
+                </div>
+              )}
             </div>
-          ))}
+          </div>
+
+          {/* ── Collage: all photos form one rectangle; nothing sticks out of its outline ── */}
+          <div
+            ref={gridRef}
+            className="[grid-area:1/1] mt-[calc(var(--card-h)-56px)] md:mt-[calc(var(--card-h)-104px)] grid grid-cols-2 grid-rows-[220px_160px_160px] md:grid-cols-4 md:grid-rows-2 md:h-[600px] gap-2 md:gap-3 overflow-hidden rounded-[2rem]"
+          >
+            {introGridConfig.portfolioImages.slice(0, 5).map((image, index) => (
+              <div
+                key={index}
+                className={`grid-item relative overflow-hidden group opacity-0 ${
+                  index === 0 ? 'col-span-2 md:row-span-2' : ''
+                }`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="absolute inset-0 w-full h-full object-cover will-change-transform"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Floating accent text */}

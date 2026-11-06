@@ -109,8 +109,9 @@ At Mc Pro, we don't just build structures — we build spaces that support busin
   descriptionReadMoreLabel: "Read more",
   descriptionReadLessLabel: "Show less",
   portfolioImages: [
-    { src: assetPath("/project-office-1.jpg"), alt: "Commercial interior with acoustical ceiling grid and linear lighting" },
+    // First image is the large tile of the collage
     { src: assetPath("/project-restaurant-1.jpg"), alt: "Restaurant dining room with bar, lounge seating and custom lighting" },
+    { src: assetPath("/project-office-1.jpg"), alt: "Commercial interior with acoustical ceiling grid and linear lighting" },
     { src: assetPath("/featured-industrial.jpg"), alt: "Industrial facility with loading docks" },
     { src: assetPath("/value-safety.jpg"), alt: "Construction crew reviewing drawings on site" },
     { src: assetPath("/featured-office-complex.jpg"), alt: "Commercial building entrance at dusk" },
