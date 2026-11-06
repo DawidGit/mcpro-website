@@ -212,8 +212,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "PenLine",
       title: "Pre-Construction & Coordination",
-      image: assetPath("/project-office-1.jpg"),
-      imageAlt: "Commercial interior with acoustical ceiling grid and linear lighting",
+      image: assetPath("/service-commercial-buildout.jpg"),
+      imageAlt: "Commercial storefront interior during build-out with ceiling grid, framing and new counters",
       description:
         "We get the details right before work starts, so the job runs without surprises.",
       bullets: [
