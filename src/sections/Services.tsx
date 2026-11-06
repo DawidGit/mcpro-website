@@ -32,7 +32,7 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 /**
- * Layered service rows: an angled photo with an offset outline frame, a light card that
+ * Layered service rows: a rounded photo with an offset outline frame, a light card that
  * overlaps the photo, and an oversized outlined index number behind both. Sides alternate
  * from row to row; on mobile the card overlaps the bottom of the photo.
  */
@@ -161,11 +161,7 @@ export function Services() {
                       }`}
                     />
                     <div
-                      className={`group relative h-64 sm:h-80 md:h-[440px] overflow-hidden rounded-[2rem] ${
-                        mediaLeft
-                          ? '[clip-path:polygon(0_0,100%_0,100%_100%,16%_100%,0_76%)]'
-                          : '[clip-path:polygon(0_0,100%_0,100%_76%,84%_100%,0_100%)]'
-                      }`}
+                      className="group relative h-64 sm:h-80 md:h-[440px] overflow-hidden rounded-[2rem]"
                     >
                       <img
                         src={service.image}
@@ -197,12 +193,9 @@ export function Services() {
                       mediaLeft ? 'md:rounded-tr-[5rem]' : 'md:rounded-tl-[5rem]'
                     }`}
                   >
-                    <div className="flex items-center gap-4 mb-6">
-                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-forest-dark text-white">
-                        <Icon className="w-6 h-6" strokeWidth={1.5} />
-                      </span>
-                      <span className="h-px flex-1 bg-softblack/15" />
-                    </div>
+                    <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-dark text-white">
+                      <Icon className="w-6 h-6" strokeWidth={1.5} />
+                    </span>
                     <h3 className="text-2xl md:text-3xl font-sans font-bold tracking-tight text-softblack mb-3">
                       {service.title}
                     </h3>
