@@ -32,9 +32,8 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 /**
- * Layered service rows: a rounded photo with an offset outline frame, a light card that
- * overlaps the photo, and an oversized outlined index number behind both. Sides alternate
- * from row to row; on mobile the card overlaps the bottom of the photo.
+ * Layered service rows: a rounded photo with an offset outline frame and a light card that
+ * overlaps the photo. Sides alternate from row to row; on mobile the card overlaps the bottom of the photo.
  */
 export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -66,7 +65,6 @@ export function Services() {
       rows.forEach((row) => {
         const media = row.querySelector('.service-media');
         const card = row.querySelector('.service-card');
-        const number = row.querySelector('.service-number');
         const fromLeft = row.dataset.side === 'left';
         ScrollTrigger.create({
           trigger: row,
@@ -79,9 +77,6 @@ export function Services() {
             }
             if (card) {
               tl.fromTo(card, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9 }, '-=0.6');
-            }
-            if (number) {
-              tl.fromTo(number, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1 }, '-=0.9');
             }
           },
         });
@@ -140,7 +135,6 @@ export function Services() {
           {servicesConfig.services.map((service, index) => {
             const Icon = iconMap[service.iconName] || Camera;
             const mediaLeft = index % 2 === 0;
-            const number = String(index + 1).padStart(2, '0');
             return (
               <article
                 key={index}
@@ -170,15 +164,6 @@ export function Services() {
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-forest-dark/10 to-transparent" />
-                      {/* Outlined index number layered on the photo */}
-                      <span
-                        aria-hidden
-                        className={`service-number pointer-events-none select-none absolute top-4 md:top-6 font-sans font-bold leading-none text-[5rem] md:text-[8.5rem] text-transparent [-webkit-text-stroke:1.5px_rgba(255,255,255,0.75)] ${
-                          mediaLeft ? 'left-6 md:left-8' : 'right-6 md:right-8'
-                        }`}
-                      >
-                        {number}
-                      </span>
                     </div>
                   </div>
                 )}
