@@ -238,7 +238,7 @@ export function IntroGrid() {
         >
           <div
             ref={cardRef}
-            className="[grid-area:1/1] self-start relative z-10 w-full max-w-4xl mx-auto px-1 sm:px-0"
+            className="[grid-area:1/1] self-start relative z-10 w-full max-w-5xl mx-auto px-1 sm:px-0"
           >
             <div
               ref={textRef}
