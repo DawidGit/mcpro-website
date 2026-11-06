@@ -75,6 +75,8 @@ export function IntroGrid() {
   const readLessLabel =
     introGridConfig.descriptionReadLessLabel ?? 'Show less';
 
+  const hasTitle = Boolean(introGridConfig.titleLine1 || introGridConfig.titleLine2);
+
   const hasIntroGridContent =
     Boolean(introGridConfig.titleLine1) ||
     Boolean(introGridConfig.titleLine2) ||
@@ -199,10 +201,11 @@ export function IntroGrid() {
     <section
       ref={sectionRef}
       id="intro"
-      className="relative w-full pt-0 md:pt-1 pb-24 md:pb-32 bg-white scroll-mt-24"
+      className={`relative w-full pb-24 md:pb-32 bg-white scroll-mt-24 ${hasTitle ? 'pt-0 md:pt-1' : 'pt-16 md:pt-24'}`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* ── Title with split-line mask reveal ── */}
+        {/* ── Title with split-line mask reveal (rendered only when configured) ── */}
+        {hasTitle && (
         <div className="mb-10 md:mb-14">
           <div className="max-w-3xl mx-auto text-center mb-6 md:mb-8">
             <div className="mb-6">
@@ -229,6 +232,7 @@ export function IntroGrid() {
             </div>
           </div>
         </div>
+        )}
 
         {/* Mission card and collage share one grid cell: the card sits on top and overlaps the
             collage's top edge; when expanded it grows down over the collage. */}
@@ -245,9 +249,9 @@ export function IntroGrid() {
               className="opacity-0 bg-offwhite text-softblack rounded-3xl md:rounded-tr-[5rem] p-7 sm:p-9 lg:p-12 shadow-[0_28px_60px_-18px_rgba(0,0,0,0.45),0_8px_18px_-8px_rgba(0,0,0,0.25)]"
             >
               {introGridConfig.descriptionHeading && (
-                <h3 className="font-sans font-bold text-softblack text-2xl md:text-3xl tracking-tight mb-5">
+                <h2 className="font-sans font-bold text-softblack text-2xl md:text-3xl tracking-tight mb-5">
                   {introGridConfig.descriptionHeading}
-                </h3>
+                </h2>
               )}
               <div className="relative">
                 <div id={descriptionBodyId} className="space-y-4">

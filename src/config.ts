@@ -91,8 +91,9 @@ export interface IntroGridConfig {
 }
 
 export const introGridConfig: IntroGridConfig = {
-  titleLine1: "Building Excellence",
-  titleLine2: "Across Illinois",
+  // Section title hidden (empty) — the mission card is the section heading
+  titleLine1: "",
+  titleLine2: "",
   descriptionHeading: "Our Mission",
   description: `At Mc Pro, our mission is to deliver comprehensive, high-quality construction services that combine two decades of experience with craftsmanship, reliability, and innovation. We are dedicated to creating spaces that are not only visually impactful, but also functional, durable, and built to stand the test of time.
 
