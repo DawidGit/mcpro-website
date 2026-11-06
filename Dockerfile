@@ -50,6 +50,7 @@ RUN rm -rf /etc/nginx/conf.d/default.conf /usr/share/nginx/html/*
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx-site.conf /etc/nginx/conf.d/site.conf
+COPY security-headers.conf /etc/nginx/security-headers.conf
 
 # Copy built application from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
