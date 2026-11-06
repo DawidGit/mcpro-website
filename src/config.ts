@@ -149,8 +149,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Building2",
       title: "Commercial Remodeling",
-      image: assetPath("/project-restaurant-1.jpg"),
-      imageAlt: "Restaurant dining room with bar, lounge seating and custom lighting",
+      image: assetPath("/service-commercial-buildout.jpg"),
+      imageAlt: "Commercial storefront interior during build-out with ceiling grid, framing and new counters",
       description:
         "Our core business: remodels and build-outs for businesses that cannot afford to close — delivered in full scope of work or by individual trades.",
       bullets: [
@@ -164,8 +164,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Wrench",
       title: "Self-Performed Trades",
-      image: assetPath("/value-safety.jpg"),
-      imageAlt: "Construction crew reviewing drawings on site",
+      image: assetPath("/service-crew-plans.jpg"),
+      imageAlt: "MC Pro crew lead reviewing drawings on a framing job",
       description:
         "Our own crews handle the trades that drive quality and schedule, without relying on a chain of outside subcontractors.",
       bullets: [
@@ -197,8 +197,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "ClipboardList",
       title: "General Contracting",
-      image: assetPath("/featured-industrial.jpg"),
-      imageAlt: "Industrial facility with loading docks",
+      image: assetPath("/service-site-coordination.jpg"),
+      imageAlt: "MC Pro team coordinating on a commercial building site",
       description:
         "One accountable partner for the whole project — from mobilization to final punch list.",
       bullets: [
