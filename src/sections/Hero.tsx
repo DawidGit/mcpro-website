@@ -201,10 +201,10 @@ export function Hero() {
       {/* Layer 6: Hero CTA buttons */}
       <div className="absolute bottom-[12%] left-1/2 -translate-x-1/2 z-30 flex flex-col sm:flex-row items-center gap-4 px-4">
         <a
-          href="#projects"
+          href="#services"
           className="px-7 py-3 bg-white text-forest-dark font-semibold rounded-full shadow-lg hover:bg-white/90 transition-colors duration-300 whitespace-nowrap"
         >
-          View our work
+          Our services
         </a>
         <a
           href="#contact"

@@ -64,7 +64,6 @@ export const heroConfig: HeroConfig = {
   brandName: "MC PRO",
   navLinks: [
     { label: "Home", href: "#home" },
-    { label: "Projects", href: "#projects" },
     { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
     { label: "About", href: "#about" },
@@ -119,96 +118,6 @@ At Mc Pro, we don't just build structures — we build spaces that support busin
   accentText: "Licensed & Insured in Illinois • Full SOW or Individual Trades • Night & After-Hours Work",
 };
 
-// Featured Projects Section
-export interface Project {
-  id: number;
-  title: string;
-  category: string;
-  year: string;
-  image: string;
-  description: string;
-  galleryImages: string[];
-  highlights: string[];
-}
-
-export interface FeaturedProjectsConfig {
-  subtitle: string;
-  titleRegular: string;
-  titleItalic: string;
-  viewAllText: string;
-  viewAllHref: string;
-  viewProjectText: string;
-  projects: Project[];
-}
-
-export const featuredProjectsConfig: FeaturedProjectsConfig = {
-  subtitle: "Featured Work",
-  titleRegular: "Recent",
-  titleItalic: "Projects",
-  viewAllText: "View All Projects",
-  viewAllHref: "#projects",
-  viewProjectText: "View Project Details",
-  // Real project types, described without client names (NDA). The "year" field is shown
-  // as the second meta label next to the category, so it holds the project duration.
-  projects: [
-    {
-      id: 1,
-      title: "Overnight Front-of-House Remodel",
-      category: "Quick-Service Restaurant",
-      year: "3 nights",
-      image: assetPath("/project-restaurant-1.jpg"),
-      description: "A front-of-house and point-of-sale remodel scheduled for up to two weeks, completed in three overnight shifts (7 pm – 6 am) while the restaurant kept serving customers every day. We supplied the dumpster and most materials and coordinated inspections between shifts.",
-      galleryImages: [
-        assetPath("/project-restaurant-1.jpg"),
-        assetPath("/project-office-1.jpg"),
-        assetPath("/value-quality.jpg"),
-      ],
-      highlights: [
-        "Demolition, framing and concrete cutting for underground plumbing",
-        "Electrical, front counter installation and ACT ceilings",
-        "Framing, plumbing and rough electrical inspections passed between shifts",
-        "Restaurant open for business every day of the project",
-      ],
-    },
-    {
-      id: 2,
-      title: "Restaurant Building Expansion",
-      category: "Quick-Service Restaurant",
-      year: "12 weeks",
-      image: assetPath("/value-safety.jpg"),
-      description: "A building addition delivered in full scope of work — from demolition and cast-in-place concrete through structural steel, carpentry and finishes to a new storefront.",
-      galleryImages: [
-        assetPath("/value-safety.jpg"),
-        assetPath("/project-restaurant-1.jpg"),
-        assetPath("/value-quality.jpg"),
-      ],
-      highlights: [
-        "Demolition, cast-in-place concrete and masonry",
-        "Structural steel, rough and finish carpentry",
-        "Tile, ACT ceilings, partitions and restroom accessories",
-        "New storefront system",
-      ],
-    },
-    {
-      id: 3,
-      title: "Industrial Facility Upgrade",
-      category: "Industrial",
-      year: "Existing building",
-      image: assetPath("/featured-industrial.jpg"),
-      description: "Rough carpentry and all interior finishes in an older production building, plus roof penetrations for a new ventilation system.",
-      galleryImages: [
-        assetPath("/featured-industrial.jpg"),
-        assetPath("/project-industrial-1.jpg"),
-        assetPath("/value-quality.jpg"),
-      ],
-      highlights: [
-        "Rough carpentry and complete interior finishes",
-        "Roof penetrations for a new ventilation system",
-      ],
-    },
-  ],
-};
-
 // Services Section
 export interface ServiceItem {
   iconName: string;
@@ -216,6 +125,9 @@ export interface ServiceItem {
   description: string;
   /** Optional bullet list shown under the description */
   bullets?: string[];
+  /** Optional photo shown next to this service in the grid (interleaved with service cards) */
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface ServicesConfig {
@@ -235,6 +147,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Building2",
       title: "Commercial Remodeling",
+      image: assetPath("/project-restaurant-1.jpg"),
+      imageAlt: "Restaurant dining room with bar, lounge seating and custom lighting",
       description:
         "Our core business: remodels and build-outs for businesses that cannot afford to close — delivered in full scope of work or by individual trades.",
       bullets: [
@@ -248,6 +162,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Wrench",
       title: "Self-Performed Trades",
+      image: assetPath("/value-safety.jpg"),
+      imageAlt: "Construction crew reviewing drawings on site",
       description:
         "Our own crews handle the trades that drive quality and schedule, without relying on a chain of outside subcontractors.",
       bullets: [
@@ -265,6 +181,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Moon",
       title: "Night & After-Hours Work",
+      image: assetPath("/featured-office-complex.jpg"),
+      imageAlt: "Commercial building entrance lit up at dusk",
       description:
         "We schedule demolition and noisy work around your operating hours, so your business stays open while we build.",
       bullets: [
@@ -277,6 +195,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "ClipboardList",
       title: "General Contracting",
+      image: assetPath("/featured-industrial.jpg"),
+      imageAlt: "Industrial facility with loading docks",
       description:
         "One accountable partner for the whole project — from mobilization to final punch list.",
       bullets: [
@@ -290,6 +210,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "PenLine",
       title: "Pre-Construction & Coordination",
+      image: assetPath("/project-office-1.jpg"),
+      imageAlt: "Commercial interior with acoustical ceiling grid and linear lighting",
       description:
         "We get the details right before work starts, so the job runs without surprises.",
       bullets: [
@@ -302,6 +224,8 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Home",
       title: "Residential Remodeling",
+      image: assetPath("/value-quality.jpg"),
+      imageAlt: "Clean finish detail on a building corner",
       description:
         "We remodel our own investment properties and bring the same standards to homeowners' projects.",
       bullets: [
@@ -388,32 +312,6 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
   wideImageAlt: "Construction team reviewing plans at a job site",
   wideTitle: "Your Vision, Our Expertise",
   wideDescription: "We believe in building relationships as strong as our structures. From the first consultation to project completion, you'll have a dedicated team focused on your success.",
-};
-
-// Testimonials Section
-export interface Testimonial {
-  id: number;
-  name: string;
-  role: string;
-  image: string;
-  quote: string;
-}
-
-export interface TestimonialsConfig {
-  subtitle: string;
-  titleRegular: string;
-  titleItalic: string;
-  testimonials: Testimonial[];
-}
-
-// Hidden until real client quotes are collected (section renders nothing when empty).
-// Sign quotes with initials and role only, never a company name (NDA), e.g.
-// { id: 1, name: "J.S.", role: "Area Construction Manager, national restaurant brand", image: "", quote: "..." }
-export const testimonialsConfig: TestimonialsConfig = {
-  subtitle: "",
-  titleRegular: "",
-  titleItalic: "",
-  testimonials: [],
 };
 
 // FAQ Section
@@ -514,7 +412,6 @@ export const footerConfig: FooterConfig = {
   navigationLabel: "Navigation",
   navLinks: [
     { label: "Home", href: "#home" },
-    { label: "Projects", href: "#projects" },
     { label: "Services", href: "#services" },
     { label: "Process", href: "#process" },
     { label: "About", href: "#about" },

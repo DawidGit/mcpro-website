@@ -5,7 +5,6 @@ import {
   footerConfig,
   servicesConfig,
   siteConfig,
-  testimonialsConfig,
 } from './config';
 
 describe('siteConfig (SEO / GEO)', () => {
@@ -55,15 +54,6 @@ describe('content sections', () => {
     for (const service of servicesConfig.services) {
       expect(service.title.trim()).not.toBe('');
       expect(service.description.trim()).not.toBe('');
-    }
-  });
-
-  it('shows either no testimonials (section hidden) or up to three complete ones', () => {
-    expect(testimonialsConfig.testimonials.length).toBeLessThanOrEqual(3);
-    for (const item of testimonialsConfig.testimonials) {
-      expect(item.name.trim()).not.toBe('');
-      expect(item.role.trim()).not.toBe('');
-      expect(item.quote.trim().length).toBeGreaterThan(20);
     }
   });
 

@@ -139,8 +139,7 @@ function buildGraph() {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${CANONICAL}/` },
           { '@type': 'ListItem', position: 2, name: 'Services', item: `${CANONICAL}/#services` },
-          { '@type': 'ListItem', position: 3, name: 'Projects', item: `${CANONICAL}/#projects` },
-          { '@type': 'ListItem', position: 4, name: 'Contact', item: `${CANONICAL}/#contact` },
+          { '@type': 'ListItem', position: 3, name: 'Contact', item: `${CANONICAL}/#contact` },
         ],
       },
     ],

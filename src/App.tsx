@@ -4,8 +4,6 @@ import { Hero } from './sections/Hero';
 import { IntroGrid } from './sections/IntroGrid';
 import { Services } from './sections/Services';
 import { WhyChooseMe } from './sections/WhyChooseMe';
-import { FeaturedProjects } from './sections/FeaturedProjects';
-import { Testimonials } from './sections/Testimonials';
 import { FAQ } from './sections/FAQ';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
@@ -45,12 +43,6 @@ function App() {
 
       {/* Why Choose Me & Stats - White Section */}
       <WhyChooseMe />
-
-      {/* Featured Projects - Dark Section */}
-      <FeaturedProjects />
-
-      {/* Testimonials - White Section */}
-      <Testimonials />
 
       {/* Contact Section - Dark Section */}
       <Contact />

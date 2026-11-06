@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -84,9 +84,11 @@ export function Services() {
 
   if (!hasServicesContent) return null;
 
-  const serviceCount = servicesConfig.services.length;
-  const gridFillTwoCol = serviceCount % 2 === 0 ? 0 : 1;
-  const gridFillThreeCol = (3 - (serviceCount % 3)) % 3;
+  // Each service may be followed by its photo, so cards and photos alternate in the grid
+  // (checkerboard on 3 columns, card + photo per row on 2 columns, stacked on mobile).
+  const cellCount = servicesConfig.services.reduce((n, s) => n + (s.image ? 2 : 1), 0);
+  const gridFillTwoCol = cellCount % 2 === 0 ? 0 : 1;
+  const gridFillThreeCol = (3 - (cellCount % 3)) % 3;
 
   return (
     <section
@@ -128,27 +130,39 @@ export function Services() {
           {servicesConfig.services.map((service, index) => {
             const Icon = iconMap[service.iconName] || Camera;
             return (
-              <div
-                key={index}
-                className="service-card group bg-forest-dark p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-forest-mid cursor-pointer h-full"
-              >
-                <div className="mb-4">
-                  <Icon className="w-8 h-8 text-white/70 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+              <Fragment key={index}>
+                <div
+                  className="service-card group bg-forest-dark p-6 md:p-8 opacity-0 transition-all duration-500 hover:bg-forest-mid cursor-pointer h-full"
+                >
+                  <div className="mb-4">
+                    <Icon className="w-8 h-8 text-white/70 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-sans font-semibold text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-white/50 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
+                    {service.description}
+                  </p>
+                  {service.bullets && service.bullets.length > 0 && (
+                    <ul className="mt-4 space-y-2 text-sm text-white/45 font-body leading-snug group-hover:text-white/65 transition-colors duration-300 list-disc pl-4 marker:text-white/35">
+                      {service.bullets.map((item, bulletIndex) => (
+                        <li key={`${index}-${bulletIndex}`}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <h3 className="text-lg md:text-xl font-sans font-semibold text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-white/50 font-body leading-relaxed group-hover:text-white/70 transition-colors duration-300">
-                  {service.description}
-                </p>
-                {service.bullets && service.bullets.length > 0 && (
-                  <ul className="mt-4 space-y-2 text-sm text-white/45 font-body leading-snug group-hover:text-white/65 transition-colors duration-300 list-disc pl-4 marker:text-white/35">
-                    {service.bullets.map((item, bulletIndex) => (
-                      <li key={`${index}-${bulletIndex}`}>{item}</li>
-                    ))}
-                  </ul>
+                {service.image && (
+                  <div className="service-card group relative overflow-hidden bg-forest-mid opacity-0 h-56 sm:h-auto sm:min-h-[280px]">
+                    <img
+                      src={service.image}
+                      alt={service.imageAlt ?? ''}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-forest-dark/20 group-hover:bg-forest-dark/0 transition-colors duration-500" />
+                  </div>
                 )}
-              </div>
+              </Fragment>
             );
           })}
           {Array.from({ length: gridFillTwoCol }).map((_, i) => (
