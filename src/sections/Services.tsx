@@ -174,8 +174,14 @@ export function Services() {
                   } ${mediaLeft ? 'md:col-start-7' : 'md:col-start-1'}`}
                 >
                   <div
-                    className={`bg-offwhite text-softblack shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] p-7 sm:p-9 lg:p-11 rounded-3xl md:translate-y-20 ${
-                      mediaLeft ? 'md:rounded-tr-[5rem]' : 'md:rounded-tl-[5rem]'
+                    className={`bg-offwhite text-softblack p-7 sm:p-9 lg:p-11 rounded-3xl md:translate-y-20 ${
+                      // Shadow is cast toward the photo underneath, so the card reads as lifted above it:
+                      // upward on mobile (card overlaps the photo's bottom), sideways on desktop.
+                      'shadow-[0_-18px_40px_-12px_rgba(0,0,0,0.45),0_-4px_12px_-4px_rgba(0,0,0,0.25)]'
+                    } ${
+                      mediaLeft
+                        ? 'md:rounded-tr-[5rem] md:shadow-[-28px_-10px_50px_-10px_rgba(0,0,0,0.5),-8px_-2px_16px_-4px_rgba(0,0,0,0.3)]'
+                        : 'md:rounded-tl-[5rem] md:shadow-[28px_-10px_50px_-10px_rgba(0,0,0,0.5),8px_-2px_16px_-4px_rgba(0,0,0,0.3)]'
                     }`}
                   >
                     <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-forest-dark text-white">
