@@ -15,6 +15,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { servicesConfig } from '../config';
+import { responsiveImageProps } from '../lib/responsiveImage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -158,7 +159,7 @@ export function Services() {
                       className="group relative h-64 sm:h-80 md:h-[440px] overflow-hidden rounded-[2rem]"
                     >
                       <img
-                        src={service.image}
+                        {...responsiveImageProps(service.image, '(min-width: 768px) 66vw, 100vw')}
                         alt={service.imageAlt ?? ''}
                         loading="lazy"
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"

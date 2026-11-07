@@ -2,6 +2,7 @@ import { useEffect, useId, useLayoutEffect, useMemo, useRef, useState, type CSSP
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { introGridConfig } from '../config';
+import { responsiveImageProps } from '../lib/responsiveImage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -303,7 +304,10 @@ export function IntroGrid() {
                 }`}
               >
                 <img
-                  src={image.src}
+                  {...responsiveImageProps(
+                    image.src,
+                    index === 0 ? '(min-width: 768px) 50vw, 100vw' : '(min-width: 768px) 25vw, 50vw'
+                  )}
                   alt={image.alt}
                   className="absolute inset-0 w-full h-full object-cover will-change-transform"
                   loading="lazy"
@@ -317,7 +321,7 @@ export function IntroGrid() {
         {/* Floating accent text */}
         {introGridConfig.accentText && (
           <div className="mt-12 md:mt-16 flex justify-end">
-            <p className="text-sm text-softblack/40 font-body tracking-wider uppercase">
+            <p className="text-sm text-softblack/70 font-body tracking-wider uppercase">
               {introGridConfig.accentText}
             </p>
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { whyChooseMeConfig } from '../config';
+import { responsiveImageProps } from '../lib/responsiveImage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -350,7 +351,7 @@ export function WhyChooseMe() {
                       }`}
                     >
                       <img
-                        src={card.image}
+                        {...responsiveImageProps(card.image, '(min-width: 1024px) 35vw, (min-width: 640px) 50vw, 100vw')}
                         alt={card.imageAlt}
                         className={`w-full object-cover will-change-transform ${
                           lockFeatureHeight
@@ -442,7 +443,7 @@ export function WhyChooseMe() {
           <div ref={wideRef} className="mt-16 md:mt-24 relative rounded-lg overflow-hidden group opacity-0">
             <div className="aspect-[21/9] md:aspect-[3/1] overflow-hidden">
               <img
-                src={whyChooseMeConfig.wideImage}
+                {...responsiveImageProps(whyChooseMeConfig.wideImage, '(min-width: 1280px) 1184px, 100vw')}
                 alt={whyChooseMeConfig.wideImageAlt}
                 className="w-full h-full object-cover will-change-transform"
                 loading="lazy"

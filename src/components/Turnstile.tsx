@@ -139,7 +139,7 @@ export function Turnstile({
     );
   }
 
-  return <div ref={containerRef} className="min-h-[65px]" aria-label="Cloudflare Turnstile captcha" />;
+  return <div ref={containerRef} className="min-h-[65px]" role="group" aria-label="Cloudflare Turnstile captcha" />;
 }
 
 export default Turnstile;

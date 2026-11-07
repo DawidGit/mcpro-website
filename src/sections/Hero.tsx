@@ -133,12 +133,13 @@ export function Hero() {
         ref={textRef}
         className="absolute inset-0 flex items-start justify-center pt-28 md:pt-24 lg:pt-28 z-[4] will-change-transform"
       >
-        <h1
+        {/* Decorative display text; the keyword H1 is the overlay line below */}
+        <p
           className="px-4 text-center text-[13vw] md:text-[9vw] lg:text-[8vw] font-sans font-extrabold text-white/35 tracking-tighter leading-[4] md:leading-none select-none"
           style={isBuildWithUsText ? { color: 'rgb(13 19 16 / 0.85)' } : undefined}
         >
           {heroConfig.backgroundText}
-        </h1>
+        </p>
       </div>
 
       {/* Layer 3: Full-bleed hero image */}
@@ -186,7 +187,7 @@ export function Hero() {
           ref={overlayTextRef}
           className="absolute bottom-[calc(12%+122px)] md:bottom-[24%] left-1/2 -translate-x-1/2 z-30 will-change-transform px-4 w-max max-w-[92vw]"
         >
-          <p
+          <h1
             className={
               isCapsOverlay
                 ? 'text-center font-sans text-sm md:text-base uppercase text-white/95 tracking-[0.14em] font-semibold'
@@ -194,7 +195,7 @@ export function Hero() {
             }
           >
             {heroConfig.overlayText}
-          </p>
+          </h1>
         </div>
       )}
 

@@ -4,7 +4,10 @@
 export interface SiteConfig {
   language: string;
   siteTitle: string;
+  /** Meta description — keep under ~155 characters */
   siteDescription: string;
+  /** Longer description used in schema.org data */
+  businessDescription: string;
   siteName: string;
   legalName: string;
   canonicalUrl: string;
@@ -28,6 +31,8 @@ export const siteConfig: SiteConfig = {
   legalName: "MC Pro, INC.",
   siteTitle: "MC Pro, INC. | General Contractor & Remodeling Services in Streamwood, IL",
   siteDescription:
+    "Streamwood, IL commercial remodeling contractor for restaurants, retail & hospitality. Self-performed trades and night work. Call (312) 405-0066.",
+  businessDescription:
     "MC Pro, INC. is a Streamwood, Illinois general contractor with 20 years of experience in commercial remodeling — restaurants, retail, hospitality and industrial — with self-performed trades and night work that keeps your business open. Call (312) 405-0066.",
   canonicalUrl: "https://mcprogc.com",
   ogImage: "https://mcprogc.com/og-image.jpg",
@@ -42,7 +47,7 @@ export const siteConfig: SiteConfig = {
   latitude: 42.0174796,
   longitude: -88.1488804,
   googleMapsUrl: "https://maps.app.goo.gl/3nNP5sw82XaXk8jT9",
-  sameAs: ["https://mcprogc.com"],
+  sameAs: ["https://mcprogc.com", "https://maps.app.goo.gl/3nNP5sw82XaXk8jT9"],
 };
 
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
@@ -63,7 +68,8 @@ export const heroConfig: HeroConfig = {
   backgroundText: "Build with us",
   heroImage: assetPath("/hero-construction2.png"),
   heroImageAlt: "High-rise commercial construction with cranes and reinforced concrete structure",
-  overlayText: "Illinois Trusted General Contractor — 20 Years of Experience",
+  // Rendered as the page H1 — keep the main keyword phrase in it
+  overlayText: "Commercial Remodeling Contractor in Streamwood, IL — 20 Years of Experience",
   overlayTextStyle: "caps",
   brandName: "MC PRO",
   navLinks: [
@@ -429,11 +435,8 @@ export const footerConfig: FooterConfig = {
   socialLinks: [],
   tagline: "We develop and build\nthe exceptional",
   copyright: "© 2026 MC Pro, INC. All rights reserved.",
-  bottomLinks: [
-    { label: "Privacy Policy", href: "#privacy" },
-    { label: "Terms of Service", href: "#terms" },
-    { label: "Licenses", href: "#licenses" },
-  ],
+  // Add legal pages here once they exist (e.g. { label: "Privacy Policy", href: "/privacy" })
+  bottomLinks: [],
 };
 
 // Contact Section (New)
