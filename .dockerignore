@@ -4,6 +4,7 @@ server/node_modules/
 
 # Build outputs
 dist/
+dist-ssr/
 server/dist/
 
 # Environment variables (secrets — never enter the image)
