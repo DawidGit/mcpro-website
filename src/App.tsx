@@ -9,12 +9,26 @@ import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 import { siteConfig } from './config';
 import { SeoJsonLd } from './components/SeoJsonLd';
+import { ServicePageView } from './sections/ServicePageView';
+import { findPage } from './pages';
 import './App.css';
 
-function App() {
+interface AppProps {
+  /** Request path: location.pathname in the browser, the route being prerendered on the server. */
+  path: string;
+}
+
+function App({ path }: AppProps) {
   // Initialize Lenis smooth scroll
   useLenis();
 
+  const page = findPage(path);
+  // Unknown paths (nginx serves the home HTML as the 404 body) render the home page.
+  if (page) return <ServicePageView page={page} />;
+  return <HomePage />;
+}
+
+function HomePage() {
   useEffect(() => {
     if (siteConfig.siteTitle) {
       document.title = siteConfig.siteTitle;
