@@ -28,6 +28,15 @@ describe('static SEO assets', () => {
     expect(html).toContain('application/ld+json');
     expect(html).toContain('https://mcprogc.com/');
   });
+  it('keeps the static <title>, og:title and twitter:title equal to siteConfig.siteTitle, under 60 chars', () => {
+    const html = readFileSync(resolve(root, 'index.html'), 'utf8');
+    const title = siteConfig.siteTitle;
+    expect(title.length).toBeLessThanOrEqual(60);
+    expect(html).toContain(`<title>${title}</title>`);
+    expect(html).toContain(`<meta property="og:title" content="${title}" />`);
+    expect(html).toContain(`<meta name="twitter:title" content="${title}" />`);
+  });
+
   it('keeps the static FAQ schema in index.html in sync with faqConfig', () => {
     const html = readFileSync(resolve(root, 'index.html'), 'utf8');
     const match = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);

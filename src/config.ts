@@ -29,7 +29,7 @@ export const siteConfig: SiteConfig = {
   language: "en",
   siteName: "MC Pro, INC.",
   legalName: "MC Pro, INC.",
-  siteTitle: "MC Pro, INC. | General Contractor & Remodeling Services in Streamwood, IL",
+  siteTitle: "Commercial Remodeling Contractor Streamwood, IL | MC Pro",
   siteDescription:
     "Streamwood, IL commercial remodeling contractor for restaurants, retail & hospitality. Self-performed trades and night work. Call (312) 405-0066.",
   businessDescription:
