@@ -178,7 +178,7 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Wrench",
       title: "Self-Performed Trades",
-      pageLinks: [{ label: "Epoxy & polished concrete floors", href: "/epoxy-polished-concrete" }],
+      pageLinks: [{ label: "Polished concrete & floor prep", href: "/polished-concrete" }],
       image: assetPath("/service-crew-plans.jpg"),
       imageAlt: "MC Pro crew lead reviewing drawings on a framing job",
       description:
@@ -191,7 +191,7 @@ export const servicesConfig: ServicesConfig = {
         "Solid surface & granite — fabrication and installation",
         "Concrete cutting, coring & pours",
         "Electrical",
-        "Masonry restoration, polished concrete & epoxy floors",
+        "Masonry restoration & polished concrete",
         "Painting & wallcovering",
       ],
     },
