@@ -208,6 +208,19 @@ export function Services() {
                         ))}
                       </ul>
                     )}
+                    {service.pageLinks && service.pageLinks.length > 0 && (
+                      <p className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-body">
+                        {service.pageLinks.map((link) => (
+                          <a
+                            key={link.href}
+                            href={link.href}
+                            className="font-semibold text-forest-dark underline underline-offset-4 decoration-forest-dark/30 hover:decoration-forest-dark"
+                          >
+                            {link.label} →
+                          </a>
+                        ))}
+                      </p>
+                    )}
                   </div>
                 </div>
               </article>

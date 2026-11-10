@@ -131,6 +131,24 @@ export function Footer() {
                   })}
                 </div>
               )}
+              {footerConfig.serviceLinks.length > 0 && (
+                <>
+                  <p className="text-[rgb(26_26_26)] text-sm font-body uppercase tracking-widest mb-4">
+                    {footerConfig.servicesLabel}
+                  </p>
+                  <nav aria-label="Services" className="space-y-3 flex flex-col items-center md:items-start">
+                    {footerConfig.serviceLinks.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="block text-[rgb(26_26_26)] hover:underline font-body transition-colors duration-300"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                  </nav>
+                </>
+              )}
               {footerConfig.tagline && (
                 <p className="mt-6 text-[rgb(26_26_26)] font-body text-sm whitespace-pre-line">
                   {footerConfig.tagline}

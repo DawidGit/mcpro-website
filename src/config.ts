@@ -1,4 +1,5 @@
 // Site Configuration
+import { servicePages } from "./pages";
 // General Contractor Website - Illinois Commercial Construction
 
 export interface SiteConfig {
@@ -140,6 +141,8 @@ export interface ServiceItem {
   /** Optional photo shown next to this service in the grid (interleaved with service cards) */
   image?: string;
   imageAlt?: string;
+  /** Links to the matching service pages (src/pages.ts), shown under the card */
+  pageLinks?: FooterLink[];
 }
 
 export interface ServicesConfig {
@@ -159,6 +162,7 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Building2",
       title: "Commercial Remodeling",
+      pageLinks: [{ label: "Commercial remodeling", href: "/commercial-remodeling" }, { label: "Restaurants", href: "/restaurant-remodeling" }, { label: "Retail & pharmacy", href: "/retail-remodeling" }, { label: "Hotels & hospitality", href: "/hospitality-remodeling" }],
       image: assetPath("/service-commercial-restaurant.jpg"),
       imageAlt: "Restaurant dining room remodel in progress with new booths, wood paneling and pendant lighting",
       description:
@@ -174,6 +178,7 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Wrench",
       title: "Self-Performed Trades",
+      pageLinks: [{ label: "Epoxy & polished concrete floors", href: "/epoxy-polished-concrete" }],
       image: assetPath("/service-crew-plans.jpg"),
       imageAlt: "MC Pro crew lead reviewing drawings on a framing job",
       description:
@@ -193,6 +198,7 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Moon",
       title: "Night & After-Hours Work",
+      pageLinks: [{ label: "How our night work runs", href: "/night-work" }],
       image: assetPath("/featured-office-complex.jpg"),
       imageAlt: "Commercial building entrance lit up at dusk",
       description:
@@ -409,6 +415,9 @@ export interface FooterConfig {
   locationText: string;
   navigationLabel: string;
   navLinks: FooterLink[];
+  servicesLabel: string;
+  /** Links to the service / location pages (src/pages.ts); shown on every page */
+  serviceLinks: FooterLink[];
   socialLabel: string;
   socialLinks: SocialLink[];
   tagline: string;
@@ -423,12 +432,15 @@ export const footerConfig: FooterConfig = {
   locationText: "724 Bonded Parkway\nStreamwood, IL 60107",
   navigationLabel: "Navigation",
   navLinks: [
-    { label: "Home", href: "#home" },
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    // Root-relative so they also work from the service pages (Lenis smooth-scrolls them on /)
+    { label: "Home", href: "/#home" },
+    { label: "Services", href: "/#services" },
+    { label: "Process", href: "/#process" },
+    { label: "About", href: "/#about" },
+    { label: "Contact", href: "/#contact" },
   ],
+  servicesLabel: "Services",
+  serviceLinks: servicePages.map((page) => ({ label: page.navLabel, href: `/${page.slug}` })),
   // Hidden until MC Pro has its own profiles. To restore, set the label to "Follow Us" and add
   // e.g. { iconName: "Linkedin", href: "https://www.linkedin.com/company/<profile>", label: "LinkedIn" }
   socialLabel: "",
