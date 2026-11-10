@@ -3,13 +3,21 @@ import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 
-// Mark lazy images as loaded once they finish loading
+// Lazy images stay at opacity 0 until marked data-loaded (App.css fade-in).
+// Mark them once they finish loading.
 document.addEventListener('load', (e) => {
   const el = e.target;
   if (el instanceof HTMLImageElement && el.loading === 'lazy') {
     el.setAttribute('data-loaded', '');
   }
 }, true);
+
+// The HTML is prerendered, so the browser can finish loading an image (often from cache)
+// before this module runs and its load event never reaches the listener above. Mark those
+// too, otherwise they stay invisible.
+document.querySelectorAll<HTMLImageElement>('img[loading="lazy"]').forEach((img) => {
+  if (img.complete && img.naturalWidth > 0) img.setAttribute('data-loaded', '');
+});
 
 const rootEl = document.getElementById('root')!;
 const app = (
