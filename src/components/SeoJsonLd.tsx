@@ -33,20 +33,13 @@ function buildGraph() {
           },
         })),
       },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${CANONICAL}/#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${CANONICAL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Services', item: `${CANONICAL}/#services` },
-          { '@type': 'ListItem', position: 3, name: 'Contact', item: `${CANONICAL}/#contact` },
-        ],
-      },
     ],
   };
 }
 
-/** Injects semantic JSON-LD @graph for SEO, local GEO, and AI search (GEO). */
+/** Injects semantic JSON-LD @graph for SEO, local GEO, and AI search (GEO).
+ * Same nodes as the static block in index.html; no BreadcrumbList on the home page
+ * (a breadcrumb of #anchors on one page is not a real trail). */
 export function SeoJsonLd() {
   useEffect(() => {
     const scriptId = 'mcpro-jsonld';
