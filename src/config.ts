@@ -105,7 +105,7 @@ export const introGridConfig: IntroGridConfig = {
   // Section title hidden (empty) — the mission card is the section heading
   titleLine1: "",
   titleLine2: "",
-  descriptionHeading: "Our Mission",
+  descriptionHeading: "Building Since 2006",
   description: `At Mc Pro, our mission is to deliver comprehensive, high-quality construction services that combine two decades of experience with craftsmanship, reliability, and innovation. We are dedicated to creating spaces that are not only visually impactful, but also functional, durable, and built to stand the test of time.
 
 Our team has been building since 2006 — first under earlier company names, today as MC Pro, INC. We started as a trade subcontractor on commercial projects — stone and facades, tile, concrete, masonry restoration, carpentry, ceilings and painting — while remodeling our own residential investment properties. That hands-on experience across trades grew into a team that takes on entire projects, from demolition to final punch.
@@ -155,8 +155,8 @@ export interface ServicesConfig {
 
 export const servicesConfig: ServicesConfig = {
   subtitle: "What We Offer",
-  titleLine1: "Our",
-  titleLine2Italic: "Services",
+  titleLine1: "Remodeling for",
+  titleLine2Italic: "Restaurants & Retail",
   description: "From full scope of work to individual trade packages, we self-perform the core trades with our own crews — so you get fewer handoffs, consistent quality and a schedule we control.",
   services: [
     {
@@ -287,8 +287,8 @@ export interface WhyChooseMeConfig {
 
 export const whyChooseMeConfig: WhyChooseMeConfig = {
   subtitle: "Why Choose Mc Pro",
-  titleRegular: "Proven",
-  titleItalic: "Excellence",
+  titleRegular: "Remodeling Without",
+  titleItalic: "Closing Your Doors",
   statsLabel: "By The Numbers",
   stats: [
     { value: 20, suffix: "+", label: "Years of Construction Experience" },
@@ -474,8 +474,8 @@ export interface ContactConfig {
 
 export const contactConfig: ContactConfig = {
   subtitle: "Start Your Project",
-  titleRegular: "Let's",
-  titleItalic: "Connect",
+  titleRegular: "Request a",
+  titleItalic: "Quote",
   description:
     "Ready to start your construction project with MC Pro, INC. in Streamwood, IL? Call (312) 405-0066 or email office@mcprogc.com for a consultation.",
   phone: "(312) 405-0066",
