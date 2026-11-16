@@ -6,13 +6,7 @@ import { trackContactLinkClicks } from './lib/leadTracking'
 
 trackContactLinkClicks();
 
-// Mark lazy images as loaded once they finish loading
-document.addEventListener('load', (e) => {
-  const el = e.target;
-  if (el instanceof HTMLImageElement && el.loading === 'lazy') {
-    el.setAttribute('data-loaded', '');
-  }
-}, true);
+// Lazy-image fade-in (data-loaded) is handled by an inline script in index.html <head>.
 
 const rootEl = document.getElementById('root')!;
 const app = (

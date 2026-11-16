@@ -12,6 +12,18 @@
       gtag('js', new Date());
     </script>
 
+    <!-- Lazy images start at opacity 0 (App.css) and fade in once marked data-loaded.
+         This listener must run here, before <body> is parsed: the HTML is prerendered,
+         so images can finish loading (from cache or on a slow connection) before the
+         app bundle arrives, and a listener in main.tsx would miss them for good. -->
+    <script>
+      document.addEventListener('load', function (e) {
+        var el = e.target;
+        if (el && el.tagName === 'IMG' && el.loading === 'lazy') el.setAttribute('data-loaded', '');
+      }, true);
+    </script>
+    <noscript><style>img[loading="lazy"] { opacity: 1; }</style></noscript>
+
     <!-- Primary Meta Tags -->
     <title>Commercial Remodeling Contractor Streamwood, IL | MC Pro</title>
     <meta
