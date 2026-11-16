@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Instagram, Twitter, Linkedin, Mail, type LucideIcon } from 'lucide-react';
-import { footerConfig } from '../config';
+import { contactConfig, footerConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +69,14 @@ export function Footer() {
                 <p className="text-[rgb(26_26_26)] text-sm font-body uppercase tracking-widest mb-4">
                   {footerConfig.contactLabel}
                 </p>
+              )}
+              {contactConfig.phone && (
+                <a
+                  href={`tel:${contactConfig.phone.replace(/\D/g, '')}`}
+                  className="mb-1 text-base md:text-lg font-sans font-semibold text-[rgb(26_26_26)] hover:text-[rgb(26_26_26)] transition-colors duration-300"
+                >
+                  {contactConfig.phone}
+                </a>
               )}
               {footerConfig.email && (
                 <a

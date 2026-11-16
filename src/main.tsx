@@ -2,6 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
+import { trackContactLinkClicks } from './lib/leadTracking'
+
+trackContactLinkClicks();
 
 // Mark lazy images as loaded once they finish loading
 document.addEventListener('load', (e) => {

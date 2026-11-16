@@ -59,6 +59,7 @@ export function ServicePageView({ page }: { page: ServicePage }) {
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href={phoneHref}
+              data-track="hero"
               className="inline-flex items-center gap-2 px-7 py-3 bg-white text-forest-dark font-semibold rounded-full shadow-lg hover:bg-white/90 transition-colors"
             >
               <Phone className="w-4 h-4" strokeWidth={1.75} />
@@ -149,11 +150,20 @@ export function ServicePageView({ page }: { page: ServicePage }) {
         <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-20 text-center">
           <h2 className="font-sans font-bold tracking-tight text-3xl md:text-4xl">Talk to MC Pro about your project</h2>
           <p className="mt-4 font-body text-white/70 text-base md:text-lg">
-            Call {contactConfig.phone}, email {contactConfig.email} or send us your bid package.
+            Call{' '}
+            <a href={phoneHref} data-track="cta-text" className="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">
+              {contactConfig.phone}
+            </a>
+            , email{' '}
+            <a href={`mailto:${contactConfig.email}`} data-track="cta-text" className="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">
+              {contactConfig.email}
+            </a>{' '}
+            or send us your bid package.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               href={phoneHref}
+              data-track="cta"
               className="inline-flex items-center gap-2 px-7 py-3 bg-white text-forest-dark font-semibold rounded-full hover:bg-white/90 transition-colors"
             >
               <Phone className="w-4 h-4" strokeWidth={1.75} />
