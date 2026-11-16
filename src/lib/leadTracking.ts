@@ -1,24 +1,35 @@
-// Lead events for Google Tag Manager (container GTM-WMLFG797).
-// The site only pushes to window.dataLayer; GTM turns these into GA4 events:
+// Lead events sent straight to GA4 (G-HGZT1XL04Y) with gtag('event', …).
+// The GA4 Google tag that GTM-WMLFG797 loads reads gtag commands from the shared
+// dataLayer, so no GTM trigger or tag is needed (checked on mcprogc.com,
+// 2026-11-16). Do not also add GTM tags for these names: GA4 would count twice.
 //   contact_form_submit – "Send Message" pressed with valid fields (an attempt)
 //   generate_lead  – contact form delivered (GA4 recommended event name)
 //   phone_click    – any tel: link clicked
 //   email_click    – any mailto: link clicked
-// Each event carries page_path and link_location (header, hero, footer, …) so
-// GA4 can show which page and which button produced the lead.
+// Clicks carry link_location (header, hero, cta, footer, …); GA4 records the page itself.
+// Key events (conversions) are marked in GA4 Admin; site code cannot set them.
 
 type LeadEvent = 'contact_form_submit' | 'generate_lead' | 'phone_click' | 'email_click';
 
 declare global {
   interface Window {
     dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
 export function pushLeadEvent(event: LeadEvent, params: Record<string, string> = {}): void {
   if (typeof window === 'undefined') return;
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, page_path: window.location.pathname, ...params });
+  // index.html defines gtag(); keep the same shim if it is missing. gtag.js only
+  // accepts a real `arguments` object, not an array.
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer!.push(arguments);
+    };
+  window.gtag('event', event, params);
 }
 
 /** Where on the page a link sits: data-track, else the nearest landmark or section id. */
