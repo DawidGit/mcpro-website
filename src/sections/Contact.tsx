@@ -13,6 +13,7 @@ import {
   type ContactFormState,
 } from '@/lib/contactFormService';
 import { formatPhoneNumber } from '@/lib/phoneFormat';
+import { pushLeadEvent } from '@/lib/leadTracking';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -134,6 +135,13 @@ export function Contact() {
       return;
     }
 
+    // "Send Message" pressed with valid fields. generate_lead below fires only
+    // once the message is actually delivered.
+    pushLeadEvent('contact_form_submit', {
+      form_id: 'contact',
+      project_type: formState.projectType || 'not_set',
+    });
+
     // Turnstile may solve itself invisibly — require a token before sending.
     if (!captchaToken) {
       setSubmitStatus('error');
@@ -149,6 +157,7 @@ export function Contact() {
     setIsSubmitting(false);
 
     if (result.ok) {
+      pushLeadEvent('generate_lead', { lead_source: 'contact_form' });
       setSubmitStatus('success');
       setStatusMessage('Thank you! Your message has been sent successfully.');
       setFormState(EMPTY_FORM);

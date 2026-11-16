@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { heroConfig } from '../config';
+import { Phone } from 'lucide-react';
+import { contactConfig, heroConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +29,7 @@ export function Hero() {
   const isBuildWithUsText = heroConfig.backgroundText === 'Build with us';
   const isCapsOverlay = heroConfig.overlayTextStyle === 'caps';
   const navLogoSrc = `${import.meta.env.BASE_URL}mc-pro-logo.webp`;
+  const phoneHref = `tel:${contactConfig.phone.replace(/\D/g, '')}`;
   const hasHeroContent = Boolean(heroConfig.backgroundText) || Boolean(heroConfig.heroImage) || heroConfig.navLinks.length > 0;
 
   useEffect(() => {
@@ -225,12 +227,30 @@ export function Hero() {
             loading="eager"
           />
         </div>
-        {heroConfig.navLinks.length > 0 && (
-          <div className="hidden md:flex items-center gap-8 text-white/80 text-sm font-body">
-            {heroConfig.navLinks.map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-white transition-colors duration-300">{link.label}</a>
-            ))}
-          </div>
+        <div className="hidden md:flex items-center gap-8 text-white/80 text-sm font-body">
+          {heroConfig.navLinks.map((link) => (
+            <a key={link.label} href={link.href} className="hover:text-white transition-colors duration-300">{link.label}</a>
+          ))}
+          {contactConfig.phone && (
+            <a
+              href={phoneHref}
+              data-track="header"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 font-semibold text-white/90 hover:bg-white hover:text-forest-dark transition-colors duration-300"
+            >
+              <Phone className="w-4 h-4" strokeWidth={1.75} aria-hidden="true" />
+              <span>{contactConfig.phone}</span>
+            </a>
+          )}
+        </div>
+        {contactConfig.phone && (
+          <a
+            href={phoneHref}
+            data-track="header"
+            aria-label={`Call ${contactConfig.phone}`}
+            className="md:hidden absolute top-7 right-16 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white/90 hover:bg-white hover:text-forest-dark transition-colors duration-300"
+          >
+            <Phone className="w-4 h-4" strokeWidth={1.75} aria-hidden="true" />
+          </a>
         )}
         <button
           type="button"
