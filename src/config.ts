@@ -162,7 +162,7 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Building2",
       title: "Commercial Remodeling",
-      pageLinks: [{ label: "Commercial remodeling", href: "/commercial-remodeling" }, { label: "Restaurants", href: "/restaurant-remodeling" }, { label: "Retail & pharmacy", href: "/retail-remodeling" }, { label: "Hotels & hospitality", href: "/hospitality-remodeling" }],
+      pageLinks: [{ label: "General contractor in Chicago", href: "/general-contractor-chicago" }, { label: "Commercial remodeling", href: "/commercial-remodeling" }, { label: "Restaurants", href: "/restaurant-remodeling" }, { label: "Retail & pharmacy", href: "/retail-remodeling" }, { label: "Hotels & hospitality", href: "/hospitality-remodeling" }],
       image: assetPath("/service-commercial-restaurant.jpg"),
       imageAlt: "Restaurant dining room remodel in progress with new booths, wood paneling and pendant lighting",
       description:
@@ -178,7 +178,6 @@ export const servicesConfig: ServicesConfig = {
     {
       iconName: "Wrench",
       title: "Self-Performed Trades",
-      pageLinks: [{ label: "Polished concrete & floor prep", href: "/polished-concrete" }],
       image: assetPath("/service-crew-plans.jpg"),
       imageAlt: "MC Pro crew lead reviewing drawings on a framing job",
       description:
@@ -191,7 +190,7 @@ export const servicesConfig: ServicesConfig = {
         "Solid surface & granite — fabrication and installation",
         "Concrete cutting, coring & pours",
         "Electrical",
-        "Masonry restoration & polished concrete",
+        "Masonry restoration",
         "Painting & wallcovering",
       ],
     },
