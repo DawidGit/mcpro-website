@@ -85,6 +85,12 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - TURNSTILE_SECRET_KEY=${TURNSTILE_SECRET_KEY:-}
+      # Gmail API (preferred): OAuth refresh token with the gmail.send scope only
+      - GMAIL_CLIENT_ID=${GMAIL_CLIENT_ID:-}
+      - GMAIL_CLIENT_SECRET=${GMAIL_CLIENT_SECRET:-}
+      - GMAIL_REFRESH_TOKEN=${GMAIL_REFRESH_TOKEN:-}
+      - GMAIL_SENDER=${GMAIL_SENDER:-}
+      # SMTP fallback (used only when GMAIL_REFRESH_TOKEN is empty)
       - SMTP_HOST=${SMTP_HOST:-smtp.gmail.com}
       - SMTP_PORT=${SMTP_PORT:-587}
       - SMTP_USER=${SMTP_USER:-}
