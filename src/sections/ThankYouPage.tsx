@@ -24,7 +24,7 @@ export function ThankYouPage() {
 
       <main className="bg-forest-dark text-white">
         {/* Hero: photo with the heading. Shows the whole photo (both figures) and lets the heading sit on the darkened bottom edge. */}
-        <section className="relative isolate overflow-hidden">
+        <section className="relative isolate overflow-hidden md:aspect-[1280/714]">
           <img
             src={handshake}
             srcSet={`${handshakeBase}-640.webp 640w, ${handshakeBase}-1280.webp 1280w`}
@@ -33,10 +33,10 @@ export function ThankYouPage() {
             width={1280}
             height={714}
             fetchPriority="high"
-            className="absolute inset-0 -z-10 h-full w-full object-cover object-[55%_100%] md:object-bottom"
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[55%_0%] md:object-top"
           />
           <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-dark via-forest-dark/10 via-35% to-forest-dark/30" />
-          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-8 md:pb-12 min-h-[420px] md:min-h-0 md:aspect-[1280/714] md:max-h-[760px] flex flex-col">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-8 md:pb-12 min-h-[320px] md:min-h-0 md:h-full flex flex-col">
             <nav aria-label="Breadcrumb" className="text-sm font-body text-white/80">
               <ol className="flex flex-wrap items-center gap-2">
                 <li><a href="/" className="hover:text-white">Home</a></li>
