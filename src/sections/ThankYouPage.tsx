@@ -23,7 +23,7 @@ export function ThankYouPage() {
       <SiteHeader />
 
       <main className="bg-forest-dark text-white">
-        {/* Hero: photo with the heading. Kept short so the review button below stays near the fold. */}
+        {/* Hero: photo with the heading. Shows the whole photo (both figures) and lets the heading sit on the darkened bottom edge. */}
         <section className="relative isolate overflow-hidden">
           <img
             src={handshake}
@@ -33,10 +33,10 @@ export function ThankYouPage() {
             width={1280}
             height={714}
             fetchPriority="high"
-            className="absolute inset-0 -z-10 h-full w-full object-cover object-[center_30%]"
+            className="absolute inset-0 -z-10 h-full w-full object-cover object-[55%_100%] md:object-bottom"
           />
-          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-dark via-forest-dark/60 to-forest-dark/30" />
-          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-8 md:pb-12 min-h-[240px] md:min-h-[380px] flex flex-col">
+          <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-dark via-forest-dark/10 via-35% to-forest-dark/30" />
+          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-8 md:pb-12 min-h-[420px] md:min-h-0 md:aspect-[1280/714] md:max-h-[760px] flex flex-col">
             <nav aria-label="Breadcrumb" className="text-sm font-body text-white/80">
               <ol className="flex flex-wrap items-center gap-2">
                 <li><a href="/" className="hover:text-white">Home</a></li>
@@ -44,7 +44,7 @@ export function ThankYouPage() {
                 <li aria-current="page" className="text-white">Thank you</li>
               </ol>
             </nav>
-            <h1 className="mt-auto pt-12 max-w-4xl font-sans font-bold tracking-tight text-3xl md:text-5xl lg:text-6xl leading-tight drop-shadow-lg">
+            <h1 className="mt-auto pt-12 max-w-2xl font-sans font-bold tracking-tight text-3xl md:text-5xl leading-tight drop-shadow-lg">
               Thank you for choosing MC Pro, INC.
             </h1>
           </div>
