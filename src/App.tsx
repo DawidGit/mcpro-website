@@ -11,6 +11,7 @@ import { siteConfig } from './config';
 import { SeoJsonLd } from './components/SeoJsonLd';
 import { ServicePageView } from './sections/ServicePageView';
 import { findPage } from './pages';
+import { THANK_YOU_SLUG, ThankYouPage } from './sections/ThankYouPage';
 import './App.css';
 
 interface AppProps {
@@ -21,6 +22,8 @@ interface AppProps {
 function App({ path }: AppProps) {
   // Initialize Lenis smooth scroll
   useLenis();
+
+  if (path.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '') === THANK_YOU_SLUG) return <ThankYouPage />;
 
   const page = findPage(path);
   // Unknown paths (nginx serves the home HTML as the 404 body) render the home page.

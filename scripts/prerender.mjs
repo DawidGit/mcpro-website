@@ -40,6 +40,7 @@ function withHead(html, head) {
   let out = html;
   out = replaceOnce(out, /<title>[^<]*<\/title>/, `<title>${escapeAttr(head.title)}</title>`, '<title>');
   out = metaContent(out, 'name', 'description', head.description, 'meta description');
+  if (head.robots) out = metaContent(out, 'name', 'robots', head.robots, 'meta robots');
   out = replaceOnce(out, /(<link rel="canonical" href=")[^"]*(")/, `$1${head.canonical}$2`, 'canonical');
   out = metaContent(out, 'property', 'og:url', head.canonical, 'og:url');
   out = metaContent(out, 'property', 'og:title', head.title, 'og:title');
