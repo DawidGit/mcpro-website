@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { ArrowRight, Phone, Star } from 'lucide-react';
-import { contactConfig } from '../config';
+import { ArrowRight, Star } from 'lucide-react';
 import { Footer } from './Footer';
 import { SiteHeader } from './ServicePageView';
 
@@ -10,8 +9,6 @@ export const thankYouHead = {
   title: 'Thank You | MC Pro, INC.',
   description: 'Thank you for choosing MC Pro, INC. Share your experience with a Google review.',
 };
-
-const phoneHref = `tel:${contactConfig.phone.replace(/\D/g, '')}`;
 
 export function ThankYouPage() {
   useEffect(() => {
@@ -59,13 +56,6 @@ export function ThankYouPage() {
               <Star className="w-4 h-4" strokeWidth={1.75} />
               Review us on Google
               <ArrowRight className="w-4 h-4" strokeWidth={1.75} />
-            </a>
-            <a
-              href={phoneHref}
-              className="inline-flex items-center gap-2 px-7 py-3 border border-white text-white font-semibold rounded-full hover:bg-white hover:text-forest-dark transition-colors"
-            >
-              <Phone className="w-4 h-4" strokeWidth={1.75} />
-              Call {contactConfig.phone}
             </a>
           </div>
 
