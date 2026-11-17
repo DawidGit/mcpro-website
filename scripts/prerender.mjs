@@ -2,6 +2,7 @@
 // - "/"           → dist/index.html (home head stays as written in index.html)
 // - "/<slug>"     → dist/<slug>.html with its own title, description, canonical,
 //                   Open Graph / Twitter tags and JSON-LD (nginx serves it at /<slug>).
+//                   An optional head.robots overrides meta robots/googlebot (/thank-you is noindex).
 // Run via `npm run build`; expects the SSR bundle in dist-ssr/.
 import { readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -47,6 +48,10 @@ function withHead(html, head) {
   out = metaContent(out, 'name', 'twitter:url', head.canonical, 'twitter:url');
   out = metaContent(out, 'name', 'twitter:title', head.title, 'twitter:title');
   out = metaContent(out, 'name', 'twitter:description', head.description, 'twitter:description');
+  if (head.robots) {
+    out = metaContent(out, 'name', 'robots', head.robots, 'meta robots');
+    out = metaContent(out, 'name', 'googlebot', head.robots, 'meta googlebot');
+  }
   const jsonLd = head.jsonLd.replace(/</g, '\\u003c');
   out = replaceOnce(
     out,
