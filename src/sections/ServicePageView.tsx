@@ -7,7 +7,7 @@ import { Footer } from './Footer';
 const phoneHref = `tel:${contactConfig.phone.replace(/\D/g, '')}`;
 const logoSrc = `${import.meta.env.BASE_URL}mc-pro-logo.webp`;
 
-function SiteHeader() {
+export function SiteHeader() {
   return (
     <header className="bg-forest-dark text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between gap-6">
