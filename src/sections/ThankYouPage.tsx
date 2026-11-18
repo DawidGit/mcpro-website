@@ -40,7 +40,7 @@ export function ThankYouPage() {
             aria-hidden
             className="absolute inset-0 -z-10 bg-[linear-gradient(to_bottom,rgb(13_19_16/0.15)_0px,rgb(13_19_16/0)_80px,rgb(13_19_16/0.85)_250px,#0d1310_340px)] md:bg-[linear-gradient(to_right,rgb(13_19_16/0.95)_0%,rgb(13_19_16/0.7)_40%,rgb(13_19_16/0.1)_100%)]"
           />
-          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-4 pb-10 md:py-8 md:min-h-[min(calc(100svh-88px),720px)] flex flex-col">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 pt-4 pb-12 md:py-10 md:min-h-[min(calc(100svh-88px),760px)] flex flex-col">
             <nav aria-label="Breadcrumb" className="text-sm font-body text-white/70">
               <ol className="flex flex-wrap items-center gap-2">
                 <li><a href="/" className="hover:text-white">Home</a></li>
@@ -67,14 +67,13 @@ export function ThankYouPage() {
                 Review us on Google
                 <ArrowRight className="w-5 h-5" strokeWidth={1.75} />
               </a>
+              <div className="mt-8 md:mt-10 text-white/85 font-body text-base md:text-lg [text-shadow:0_1px_8px_rgb(0_0_0/0.6)]">
+                <p>Thank you again. It was a pleasure working with you.</p>
+                <p className="mt-1 font-semibold text-white">The MC Pro, INC. Team</p>
+              </div>
             </div>
           </div>
         </section>
-
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16 text-white/75 font-body text-base md:text-lg">
-          <p>Thank you again. It was a pleasure working with you.</p>
-          <p className="mt-2 font-semibold text-white">The MC Pro, INC. Team</p>
-        </div>
       </main>
 
       <Footer />
