@@ -43,11 +43,11 @@ export const servicePages: ServicePage[] = [
     navLabel: 'General Contractor Chicago',
     metaTitle: 'General Contractor in Chicago & NW Suburbs | MC Pro',
     metaDescription:
-      'Licensed and insured general contractor for Chicago and the northwest suburbs. Commercial remodeling, self-performed trades, night work. Since 2006.',
+      'Licensed and insured general contractor for Chicago and the northwest suburbs. Commercial remodeling, self-performed trades, night work. Founded in 2018.',
     eyebrow: 'General Contractor',
     h1: 'General Contractor in Chicago and the Northwest Suburbs',
     intro: [
-      'MC Pro, INC. is a general contractor based in Streamwood, Illinois, serving Chicago and the Chicago metropolitan area. We have 20 years of construction experience (since 2006, earlier under other company names) and focus on commercial remodeling for businesses that need to stay open.',
+      'MC Pro, INC. is a general contractor based in Streamwood, Illinois, serving Chicago and the Chicago metropolitan area. Founded in 2018, the company is backed by a team with 20 years of construction experience (since 2006, earlier under other company names) and focus on commercial remodeling for businesses that need to stay open.',
       'As your general contractor we manage the full scope of work: scheduling, trade coordination, inspections and handover. Unlike many general contractors, we also self-perform the core trades with our own crews, so fewer subcontractors stand between you and the result.',
     ],
     image: assetPath('/service-site-coordination.jpg'),
@@ -131,7 +131,7 @@ export const servicePages: ServicePage[] = [
     eyebrow: 'Commercial Remodeling & Construction',
     h1: 'Commercial Remodeling and Construction Contractor for the Chicago Area',
     intro: [
-      'MC Pro, INC. is a commercial general contractor based in Streamwood, Illinois. For 20 years we have remodeled and built out spaces for businesses that cannot afford to close: quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities.',
+      'MC Pro, INC. is a commercial general contractor based in Streamwood, Illinois, founded in 2018. For 20 years our team has remodeled and built out spaces for businesses that cannot afford to close: quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities.',
       'We take on the full scope of work as general contractor or deliver individual trade packages, and we self-perform the core trades with our own crews. That means fewer handoffs, consistent quality and a schedule we control.',
     ],
     image: assetPath('/service-commercial-buildout.jpg'),
