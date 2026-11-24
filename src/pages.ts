@@ -9,6 +9,8 @@ export interface PageSection {
   heading: string;
   body?: string[];
   bullets?: string[];
+  /** Compact multi-column list of place names */
+  cities?: string[];
 }
 
 export interface PageFaq {
@@ -29,6 +31,10 @@ export interface ServicePage {
   intro: string[];
   image?: string;
   imageAlt?: string;
+  /** Google My Maps embed URL (https://www.google.com/maps/d/embed?mid=...); shown in the hero instead of image */
+  mapEmbedUrl?: string;
+  /** iframe title for the hero map, required when mapEmbedUrl is set */
+  mapTitle?: string;
   /** schema.org Service.serviceType; omit for non-service pages (service area) */
   serviceType?: string;
   sections: PageSection[];
@@ -445,17 +451,23 @@ export const servicePages: ServicePage[] = [
       'MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois, in the northwest suburbs of Chicago. From here we serve the Chicago metropolitan area, Illinois and Wisconsin, and take on projects across the Midwest.',
       'Our own trucks, vans, trailers and tools let us mobilize quickly, bring the dumpster and materials to site and start on schedule.',
     ],
-    image: assetPath('/project-industrial-1.jpg'),
-    imageAlt: 'Trucks at a commercial loading dock',
+    mapEmbedUrl: 'https://www.google.com/maps/d/embed?mid=1PR2JA-EC8XMg0hRXi9J28pel8Mp9TAk&ll=42.30%2C-87.53&z=8',
+    mapTitle: 'MC Pro, INC. service area map: Chicago area, northern Illinois, southeastern Wisconsin and northwest Indiana',
     sections: [
       {
         heading: 'Where we work',
-        bullets: [
-          'Streamwood and the northwest suburbs of Chicago',
-          'Chicago and the Chicago metropolitan area, including Cook and DuPage counties',
-          'Illinois',
-          'Wisconsin (MEP team licensed in Illinois and Wisconsin)',
-          'Projects across the Midwest',
+        body: [
+          'We work in these cities and the communities around them. We also take on larger and multi-location projects across Illinois, Wisconsin and the Midwest.',
+        ],
+        cities: [
+          'Arlington Heights', 'Aurora', 'Bloomingdale', 'Bolingbrook', 'Buffalo Grove', 'Chicago',
+          'Crown Point, IN', 'Crystal Lake', 'DeKalb', 'Des Plaines', 'Downers Grove', 'Elgin',
+          'Elk Grove Village', 'Elkhart, IN', 'Elmhurst', 'Evanston', 'Gurnee', 'Hoffman Estates',
+          'Huntley', 'Itasca', 'Joliet', 'Kenosha, WI', 'Lake Forest', 'Libertyville', 'Lombard',
+          'Michigan City, IN', 'Milwaukee, WI', 'Naperville', 'Northbrook', 'Oak Brook',
+          'Orland Park', 'Oswego', 'Palatine', 'Pleasant Prairie, WI', 'Plymouth, IN', 'Racine, WI',
+          'Rockford', 'Rosemont', 'Schaumburg', 'Skokie', 'St. Charles', 'Streamwood',
+          'Vernon Hills', 'Waukegan', 'Wheaton',
         ],
       },
       {
