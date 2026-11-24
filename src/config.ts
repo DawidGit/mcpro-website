@@ -378,7 +378,7 @@ export const faqConfig: FAQConfig = {
       id: "faq-6",
       question: "What areas do you serve?",
       answer:
-        "MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois. We serve the Chicago metropolitan area, Illinois and Wisconsin, and take on projects across the Midwest.",
+        "MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois. We serve the Chicago metropolitan area, Illinois and Wisconsin.",
     },
     {
       id: "faq-7",
@@ -474,7 +474,7 @@ export const contactConfig: ContactConfig = {
   emailLabel: "Email",
   address: "724 Bonded Parkway\nStreamwood, IL 60107",
   addressLabel: "Office",
-  hours: "Monday – Friday: 7:00 AM – 4:00 PM\nSaturday: By Appointment",
+  hours: "Monday – Friday: 8:00 AM – 4:00 PM\nSaturday: By Appointment",
   hoursLabel: "Hours",
   formTitle: "Request a Consultation",
   formDescription: "Fill out the form below and our team will respond within 24 business hours.",

@@ -98,7 +98,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Where we work in the Chicago area',
         body: [
-          'Our office and yard are at 724 Bonded Parkway in Streamwood, in the northwest suburbs. From there our own trucks, trailers and tools reach job sites across Chicago, Cook and DuPage counties and the surrounding suburbs, including Schaumburg, Hoffman Estates, Elgin, Bartlett, Hanover Park, Arlington Heights, Palatine and Naperville. We also work across Illinois and Wisconsin and take on projects across the Midwest.',
+          'Our office and yard are at 724 Bonded Parkway in Streamwood, in the northwest suburbs. From there our own trucks, trailers and tools reach job sites across Chicago, Cook and DuPage counties and the surrounding suburbs, including Schaumburg, Hoffman Estates, Elgin, Bartlett, Hanover Park, Arlington Heights, Palatine and Naperville. We also work across Illinois and Wisconsin.',
         ],
       },
     ],
@@ -195,7 +195,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Multi-location and brand programs',
         body: [
-          'Working through 14 decor packages for one national restaurant brand taught us to follow brand standards exactly, verify drawings before work starts and order materials early. We bring the same process to multi-location retail and restaurant programs across Illinois, Wisconsin and the Midwest.',
+          'Working through 14 decor packages for one national restaurant brand taught us to follow brand standards exactly, verify drawings before work starts and order materials early. We bring the same process to multi-location retail and restaurant programs across Illinois and Wisconsin.',
         ],
       },
     ],
@@ -228,7 +228,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Where do you work?',
         answer:
-          'We are based in Streamwood, Illinois and work across the Chicago metropolitan area, Illinois and Wisconsin, with projects across the Midwest.',
+          'We are based in Streamwood, Illinois and work across the Chicago metropolitan area, Illinois and Wisconsin.',
       },
     ],
     related: ['restaurant-remodeling', 'retail-remodeling', 'hospitality-remodeling', 'night-work'],
@@ -285,7 +285,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Do you handle multiple locations?',
         answer:
-          'Yes. We work across the Chicago area, Illinois and Wisconsin and take on restaurant projects across the Midwest.',
+          'Yes. We take on multi-location restaurant work across the Chicago area, Illinois and Wisconsin.',
       },
     ],
     related: ['night-work', 'commercial-remodeling', 'general-contractor-chicago', 'service-area'],
@@ -379,7 +379,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Do you work outside Illinois?',
         answer:
-          'Yes. Our MEP team is licensed in Illinois and Wisconsin and we take on projects across the Midwest.',
+          'Yes. We also work in Wisconsin, and our MEP team is licensed in both Illinois and Wisconsin.',
       },
     ],
     related: ['night-work', 'commercial-remodeling', 'restaurant-remodeling', 'service-area'],
@@ -435,10 +435,10 @@ export const servicePages: ServicePage[] = [
     navLabel: 'Service Area',
     metaTitle: 'Service Area: Chicago Area, Illinois & Wisconsin | MC Pro',
     metaDescription:
-      'MC Pro, INC. is based in Streamwood, IL and serves the Chicago metropolitan area, Illinois and Wisconsin, with projects across the Midwest.',
+      'MC Pro, INC. is based in Streamwood, IL and serves the Chicago metropolitan area, Illinois and Wisconsin.',
     h1: 'Commercial Contractor Serving the Chicago Area, Illinois and Wisconsin',
     intro: [
-      'MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois, in the northwest suburbs of Chicago. From here we serve the Chicago metropolitan area, Illinois and Wisconsin, and take on projects across the Midwest.',
+      'MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois, in the northwest suburbs of Chicago. From here we serve the Chicago metropolitan area, Illinois and Wisconsin.',
       'Our own trucks, vans, trailers and tools let us mobilize quickly, bring the dumpster and materials to site and start on schedule.',
     ],
     mapEmbedUrl: 'https://www.google.com/maps/d/embed?mid=1PR2JA-EC8XMg0hRXi9J28pel8Mp9TAk&ll=42.30%2C-87.53&z=8',
@@ -447,7 +447,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Where we work',
         body: [
-          'We work in these cities and the communities around them. We also take on larger and multi-location projects across Illinois, Wisconsin and the Midwest.',
+          'We work in these cities and the communities around them. We also take on larger and multi-location projects across Illinois and Wisconsin.',
         ],
         cities: [
           'Arlington Heights', 'Aurora', 'Bloomingdale', 'Bolingbrook', 'Buffalo Grove', 'Chicago',
@@ -463,7 +463,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Office and hours',
         body: [
-          '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 7:00 AM to 4:00 PM, Saturday by appointment. Call (312) 405-0066 or email office@mcprogc.com.',
+          '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 8:00 AM to 4:00 PM, Saturday by appointment. Call (312) 405-0066 or email office@mcprogc.com.',
         ],
       },
     ],
@@ -471,7 +471,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Do you work outside the Chicago area?',
         answer:
-          'Yes. We work across Illinois and Wisconsin and take on projects across the Midwest, especially multi-location restaurant and retail programs.',
+          'Yes. We work across Illinois and Wisconsin, especially on multi-location restaurant and retail programs.',
       },
     ],
     related: ['general-contractor-chicago', 'commercial-remodeling', 'restaurant-remodeling', 'retail-remodeling'],
