@@ -107,11 +107,6 @@ export function Services() {
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         <div ref={headingRef} className="opacity-0 mb-16 md:mb-24">
-          {servicesConfig.subtitle && (
-            <p className="text-white/50 text-sm font-body uppercase tracking-widest mb-4">
-              {servicesConfig.subtitle}
-            </p>
-          )}
           <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight max-w-4xl">
             {servicesConfig.titleLine1 && (
               <span className="font-sans font-bold text-white tracking-tight">
