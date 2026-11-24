@@ -80,7 +80,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Trades we self-perform',
         body: [
-          'Our own crews handle demolition, rough and finish carpentry, acoustical ceilings (ACT), tile, floor grinding and prep, solid surface and granite fabrication and installation, concrete cutting, coring and pours, electrical, masonry restoration, painting and wallcovering. Our MEP team is licensed in Illinois and Wisconsin.',
+          'Our own crews handle demolition, rough and finish carpentry, acoustical ceilings (ACT), tile, floor grinding and prep, concrete cutting, coring and pours, electrical, masonry restoration, painting and wallcovering. Our MEP team is licensed in Illinois and Wisconsin.',
         ],
       },
       {
@@ -162,7 +162,6 @@ export const servicePages: ServicePage[] = [
           'Rough and finish carpentry',
           'Acoustical ceilings (ACT)',
           'Tile, floor grinding and prep',
-          'Solid surface and granite fabrication and installation',
           'Concrete cutting, coring and pours',
           'Electrical',
           'Masonry restoration',
@@ -248,7 +247,6 @@ export const servicePages: ServicePage[] = [
         bullets: [
           'Dining rooms and front of house',
           'Brand decor package rollouts and re-imaging',
-          'Counters, solid surface and granite tops',
           'Ceilings, lighting and electrical',
           'Floors: tile, grinding and prep',
           'Restrooms, finishes, painting and wallcovering',
@@ -355,7 +353,7 @@ export const servicePages: ServicePage[] = [
           'Restaurants, bars and lounges',
           'Corridors and back-of-house areas',
           'Ceilings, lighting and electrical',
-          'Tile, flooring and stone countertops',
+          'Tile and flooring',
           'Painting, wallcovering and finish carpentry',
         ],
       },

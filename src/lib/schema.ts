@@ -75,7 +75,6 @@ export function businessNode() {
       'Rough and finish carpentry',
       'Acoustical ceilings (ACT)',
       'Commercial tile installation',
-      'Solid surface and granite countertops',
       'Concrete cutting and coring',
       'Residential remodeling',
     ],

@@ -185,7 +185,6 @@ export const servicesConfig: ServicesConfig = {
         "Rough & finish carpentry",
         "Acoustical ceilings (ACT)",
         "Tile, floor grinding & prep",
-        "Solid surface & granite — fabrication and installation",
         "Concrete cutting, coring & pours",
         "Electrical",
         "Masonry restoration",
@@ -358,7 +357,7 @@ export const faqConfig: FAQConfig = {
     {
       id: "faq-2",
       question: "Do you take full scope of work or individual trades?",
-      answer: "Both. We can run the entire project as your general contractor, or join your team for specific trade packages such as demolition, carpentry, ACT ceilings, tile, countertops, concrete cutting or electrical.",
+      answer: "Both. We can run the entire project as your general contractor, or join your team for specific trade packages such as demolition, carpentry, ACT ceilings, tile, concrete cutting or electrical.",
     },
     {
       id: "faq-3",
