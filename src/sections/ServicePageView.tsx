@@ -47,7 +47,6 @@ export function ServicePageView({ page }: { page: ServicePage }) {
               <li aria-current="page" className="text-white/90">{page.navLabel}</li>
             </ol>
           </nav>
-          <p className="text-white/50 text-sm font-body uppercase tracking-widest mb-4">{page.eyebrow}</p>
           <h1 className="font-sans font-bold tracking-tight text-4xl md:text-5xl lg:text-6xl leading-tight max-w-4xl">
             {page.h1}
           </h1>

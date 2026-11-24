@@ -303,11 +303,6 @@ export function WhyChooseMe() {
           id="process"
           className="text-center mb-16 md:mb-20 opacity-0 scroll-mt-24"
         >
-          {whyChooseMeConfig.subtitle && (
-            <p className="text-softblack/50 text-sm font-body uppercase tracking-widest mb-4">
-              {whyChooseMeConfig.subtitle}
-            </p>
-          )}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-softblack tracking-tight">
             {whyChooseMeConfig.titleRegular}{' '}
             <span className="font-serif italic font-normal">{whyChooseMeConfig.titleItalic}</span>
