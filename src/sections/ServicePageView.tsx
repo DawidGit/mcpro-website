@@ -5,6 +5,8 @@ import { pageBySlug, type ServicePage } from '../pages';
 import { Footer } from './Footer';
 
 const phoneHref = `tel:${contactConfig.phone.replace(/\D/g, '')}`;
+/** Height of the title bar Google My Maps draws at the top of an embedded map */
+const MY_MAPS_HEADER_PX = 64;
 const logoSrc = `${import.meta.env.BASE_URL}mc-pro-logo.webp`;
 
 export function SiteHeader() {
@@ -75,7 +77,23 @@ export function ServicePageView({ page }: { page: ServicePage }) {
         </div>
       </section>
 
-      {page.image && (
+      {page.mapEmbedUrl ? (
+        <div className="max-w-7xl mx-auto px-6 md:px-12 -mt-8 md:-mt-12">
+          <div className="relative h-80 sm:h-96 md:h-[520px] overflow-hidden rounded-[2rem] shadow-xl bg-white">
+            {/* Shift the iframe up and clip it so the My Maps title bar (map name, owner, share) is hidden.
+                Google's logo and terms at the bottom stay visible. */}
+            <iframe
+              src={page.mapEmbedUrl}
+              width="100%"
+              style={{ border: 0, top: -MY_MAPS_HEADER_PX, height: `calc(100% + ${MY_MAPS_HEADER_PX}px)` }}
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              title={page.mapTitle}
+              className="absolute left-0 w-full"
+            />
+          </div>
+        </div>
+      ) : page.image && (
         <div className="max-w-7xl mx-auto px-6 md:px-12 -mt-8 md:-mt-12">
           <div className="relative h-64 sm:h-80 md:h-[460px] overflow-hidden rounded-[2rem] shadow-xl">
             <img
@@ -105,6 +123,13 @@ export function ServicePageView({ page }: { page: ServicePage }) {
                     <Check className="w-5 h-5 mt-0.5 shrink-0 text-forest-dark" strokeWidth={2} />
                     <span>{item}</span>
                   </li>
+                ))}
+              </ul>
+            )}
+            {section.cities && (
+              <ul className="mt-4 grid gap-x-6 gap-y-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 font-body text-softblack/80">
+                {section.cities.map((city) => (
+                  <li key={city}>{city}</li>
                 ))}
               </ul>
             )}
