@@ -461,7 +461,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Office and hours',
         body: [
-          '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 7:00 AM to 5:00 PM, Saturday by appointment. Call (312) 405-0066 or email office@mcprogc.com.',
+          '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 7:00 AM to 4:00 PM, Saturday by appointment. Call (312) 405-0066 or email office@mcprogc.com.',
         ],
       },
     ],
