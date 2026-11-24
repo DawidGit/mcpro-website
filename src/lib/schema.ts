@@ -27,6 +27,7 @@ export function businessNode() {
     name: siteConfig.siteName,
     legalName: siteConfig.legalName,
     alternateName: ['MCProGC', 'Mc Pro', 'MC Pro INC'],
+    foundingDate: '2018',
     description: siteConfig.businessDescription,
     url: `${CANONICAL}/`,
     image: siteConfig.ogImage,

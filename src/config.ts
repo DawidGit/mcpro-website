@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
   siteDescription:
     "Streamwood, IL commercial remodeling contractor for restaurants, retail & hospitality. Self-performed trades and night work. Call (312) 405-0066.",
   businessDescription:
-    "MC Pro, INC. is a Streamwood, Illinois general contractor with 20 years of experience in commercial remodeling — restaurants, retail, hospitality and industrial — with self-performed trades and night work that keeps your business open. Call (312) 405-0066.",
+    "MC Pro, INC. is a Streamwood, Illinois general contractor founded in 2018, with a team that brings 20 years of experience in commercial remodeling — restaurants, retail, hospitality and industrial — with self-performed trades and night work that keeps your business open. Call (312) 405-0066.",
   canonicalUrl: "https://mcprogc.com",
   ogImage: "https://mcprogc.com/og-image.jpg",
   logoUrl: "https://mcprogc.com/mc-pro-logo.png",
@@ -108,7 +108,7 @@ export const introGridConfig: IntroGridConfig = {
   descriptionHeading: "Building Since 2006",
   description: `At Mc Pro, our mission is to deliver comprehensive, high-quality construction services that combine two decades of experience with craftsmanship, reliability, and innovation. We are dedicated to creating spaces that are not only visually impactful, but also functional, durable, and built to stand the test of time.
 
-Our team has been building since 2006 — first under earlier company names, today as MC Pro, INC. We started as a trade subcontractor on commercial projects — stone and facades, tile, concrete, masonry restoration, carpentry, ceilings and painting — while remodeling our own residential investment properties. That hands-on experience across trades grew into a team that takes on entire projects, from demolition to final punch.
+Our team has been building since 2006 — first under earlier company names, and since 2018 as MC Pro, INC. We started as a trade subcontractor on commercial projects — stone and facades, tile, concrete, masonry restoration, carpentry, ceilings and painting — while remodeling our own residential investment properties. That hands-on experience across trades grew into a team that takes on entire projects, from demolition to final punch.
 
 Today, we deliver remodels for restaurants, retail stores, pharmacies, banks, hotels and industrial facilities — in full scope of work or by individual trades. Many of our projects are completed at night or in phases, so our clients' businesses stay open while we work. Our goal is to simplify construction for our clients by acting as a single, reliable partner — coordinating every trade, material order and inspection from start to finish.
 
