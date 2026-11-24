@@ -146,7 +146,6 @@ export interface ServiceItem {
 }
 
 export interface ServicesConfig {
-  subtitle: string;
   titleLine1: string;
   titleLine2Italic: string;
   description: string;
@@ -154,7 +153,6 @@ export interface ServicesConfig {
 }
 
 export const servicesConfig: ServicesConfig = {
-  subtitle: "What We Offer",
   titleLine1: "Remodeling for",
   titleLine2Italic: "Restaurants & Retail",
   description: "From full scope of work to individual trade packages, we self-perform the core trades with our own crews — so you get fewer handoffs, consistent quality and a schedule we control.",
@@ -272,7 +270,6 @@ export interface FeatureCard {
 }
 
 export interface WhyChooseMeConfig {
-  subtitle: string;
   titleRegular: string;
   titleItalic: string;
   statsLabel: string;
@@ -285,7 +282,6 @@ export interface WhyChooseMeConfig {
 }
 
 export const whyChooseMeConfig: WhyChooseMeConfig = {
-  subtitle: "Why Choose Mc Pro",
   titleRegular: "Remodeling Without",
   titleItalic: "Closing Your Doors",
   statsLabel: "By The Numbers",
@@ -339,7 +335,6 @@ export interface FAQItem {
 }
 
 export interface FAQConfig {
-  subtitle: string;
   titleRegular: string;
   titleItalic: string;
   ctaText: string;
@@ -349,7 +344,6 @@ export interface FAQConfig {
 }
 
 export const faqConfig: FAQConfig = {
-  subtitle: "Common Questions",
   titleRegular: "Frequently",
   titleItalic: "Asked Questions",
   ctaText: "Still have questions about your project?",
@@ -444,7 +438,7 @@ export const footerConfig: FooterConfig = {
   // e.g. { iconName: "Linkedin", href: "https://www.linkedin.com/company/<profile>", label: "LinkedIn" }
   socialLabel: "",
   socialLinks: [],
-  tagline: "We develop and build\nthe exceptional",
+  tagline: "",
   copyright: "© 2026 MC Pro, INC. All rights reserved.",
   // Add legal pages here once they exist (e.g. { label: "Privacy Policy", href: "/privacy" })
   bottomLinks: [],
@@ -452,7 +446,6 @@ export const footerConfig: FooterConfig = {
 
 // Contact Section (New)
 export interface ContactConfig {
-  subtitle: string;
   titleRegular: string;
   titleItalic: string;
   description: string;
@@ -472,7 +465,6 @@ export interface ContactConfig {
 }
 
 export const contactConfig: ContactConfig = {
-  subtitle: "Start Your Project",
   titleRegular: "Request a",
   titleItalic: "Quote",
   description:
@@ -483,7 +475,7 @@ export const contactConfig: ContactConfig = {
   emailLabel: "Email",
   address: "724 Bonded Parkway\nStreamwood, IL 60107",
   addressLabel: "Office",
-  hours: "Monday – Friday: 7:00 AM – 5:00 PM\nSaturday: By Appointment",
+  hours: "Monday – Friday: 7:00 AM – 4:00 PM\nSaturday: By Appointment",
   hoursLabel: "Hours",
   formTitle: "Request a Consultation",
   formDescription: "Fill out the form below and our team will respond within 24 business hours.",

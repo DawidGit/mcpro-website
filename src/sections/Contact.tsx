@@ -187,11 +187,6 @@ export function Contact() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Heading */}
         <div ref={headingRef} className="text-center mb-16 opacity-0">
-          {contactConfig.subtitle && (
-            <p className="text-white/60 text-sm font-body uppercase tracking-widest mb-4">
-              {contactConfig.subtitle}
-            </p>
-          )}
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-bold text-white tracking-tight leading-tight">
             {contactConfig.titleRegular}{' '}
             <span className="font-serif italic font-normal text-white/75">
