@@ -444,7 +444,7 @@ export const footerConfig: FooterConfig = {
   // e.g. { iconName: "Linkedin", href: "https://www.linkedin.com/company/<profile>", label: "LinkedIn" }
   socialLabel: "",
   socialLinks: [],
-  tagline: "We develop and build\nthe exceptional",
+  tagline: "",
   copyright: "© 2026 MC Pro, INC. All rights reserved.",
   // Add legal pages here once they exist (e.g. { label: "Privacy Policy", href: "/privacy" })
   bottomLinks: [],
