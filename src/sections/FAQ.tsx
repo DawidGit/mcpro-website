@@ -7,7 +7,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { faqConfig } from '../config';
+import { faqConfig, type FAQItem } from '../config';
+
+/** Renders an answer, turning the first occurrence of its link text into an on-site link. */
+function renderAnswer({ answer, link }: FAQItem) {
+  const at = link ? answer.indexOf(link.text) : -1;
+  if (!link || at < 0) return answer;
+  return (
+    <>
+      {answer.slice(0, at)}
+      <a href={link.href} className="text-white underline underline-offset-4 hover:text-white/80 transition-colors">
+        {link.text}
+      </a>
+      {answer.slice(at + link.text.length)}
+    </>
+  );
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,7 +125,7 @@ export function FAQ() {
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
                   <p className="text-white/60 font-body text-sm md:text-base leading-relaxed">
-                    {faq.answer}
+                    {renderAnswer(faq)}
                   </p>
                 </AccordionContent>
               </AccordionItem>

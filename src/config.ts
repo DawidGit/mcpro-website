@@ -330,7 +330,10 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
 export interface FAQItem {
   id: string;
   question: string;
+  /** Plain text; also used verbatim as the FAQ JSON-LD answer in index.html */
   answer: string;
+  /** Turns the first occurrence of `text` inside the answer into an on-site link */
+  link?: { text: string; href: string };
 }
 
 export interface FAQConfig {
@@ -378,7 +381,8 @@ export const faqConfig: FAQConfig = {
       id: "faq-6",
       question: "What areas do you serve?",
       answer:
-        "MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois. We serve the Chicago metropolitan area, Illinois and Wisconsin.",
+        "MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois. We serve the Chicago metropolitan area, Illinois and Wisconsin. See the full list of cities we serve and a map on our service area page.",
+      link: { text: "service area", href: "/service-area" },
     },
     {
       id: "faq-7",
