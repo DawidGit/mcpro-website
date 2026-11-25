@@ -288,7 +288,7 @@ export function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="MC Pro, INC. office location — 724 Bonded Parkway, Streamwood, IL"
+                  title="MC PRO, Inc. office location — 724 Bonded Parkway, Streamwood, IL"
                   className="w-full h-full"
                 />
               </div>

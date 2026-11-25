@@ -6,8 +6,8 @@ import { SiteHeader } from './ServicePageView';
 export const THANK_YOU_SLUG = 'thank-you';
 export const GOOGLE_REVIEW_URL = 'https://g.page/r/CSAtwW0foVY1EAI/review';
 export const thankYouHead = {
-  title: 'Thank You | MC Pro, INC.',
-  description: 'Thank you for choosing MC Pro, INC. Share your experience with a Google review.',
+  title: 'Thank You | MC PRO, Inc.',
+  description: 'Thank you for choosing MC PRO, Inc. Share your experience with a Google review.',
 };
 
 const handshakeBase = `${import.meta.env.BASE_URL}thank-you-handshake`;
@@ -62,7 +62,7 @@ export function ThankYouPage() {
 
             <div className="mt-auto md:my-auto pt-44 md:pt-0 max-w-xl">
               <h1 className="font-sans font-bold tracking-tight text-3xl md:text-5xl leading-tight [text-shadow:0_2px_12px_rgb(0_0_0/0.5)]">
-                Thank you for choosing MC Pro, INC.
+                Thank you for choosing MC PRO, Inc.
               </h1>
               <p className="mt-4 md:mt-6 text-white/90 font-body text-base md:text-lg leading-relaxed [text-shadow:0_1px_8px_rgb(0_0_0/0.6)]">
                 Thank you for trusting us with your project. Most of our work comes from referrals, so a short Google
@@ -80,7 +80,7 @@ export function ThankYouPage() {
               </a>
               <div className="mt-8 md:mt-10 text-white/85 font-body text-base md:text-lg [text-shadow:0_1px_8px_rgb(0_0_0/0.6)]">
                 <p>Thank you again. It was a pleasure working with you.</p>
-                <p className="mt-1 font-semibold text-white">The MC Pro, INC. Team</p>
+                <p className="mt-1 font-semibold text-white">The MC PRO, Inc. Team</p>
               </div>
             </div>
           </div>

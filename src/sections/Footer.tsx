@@ -56,7 +56,7 @@ export function Footer() {
           <div className="mb-6 md:mb-8 grid md:grid-cols-3">
             <img
               src={footerLogoSrc}
-              alt="MC Pro, Inc. logo"
+              alt="MC PRO, Inc. logo"
               className="h-20 md:h-24 w-auto object-contain mx-auto md:mx-0 md:col-start-2"
               loading="lazy"
             />

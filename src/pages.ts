@@ -51,7 +51,7 @@ export const servicePages: ServicePage[] = [
       'Licensed and insured general contractor for Chicago and the northwest suburbs. Commercial remodeling, self-performed trades, night work. Founded in 2018.',
     h1: 'General Contractor in Chicago and the Northwest Suburbs',
     intro: [
-      'MC Pro, INC. is a general contractor based in Streamwood, Illinois, serving Chicago and the Chicago metropolitan area. Founded in 2018, the company is backed by a team with 20 years of construction experience (since 2006, earlier under other company names) and focus on commercial remodeling for businesses that need to stay open.',
+      'MC PRO, Inc. is a general contractor based in Streamwood, Illinois, serving Chicago and the Chicago metropolitan area. Founded in 2018, the company is backed by a team with 20 years of construction experience (since 2006, earlier under other company names) and focus on commercial remodeling for businesses that need to stay open.',
       'As your general contractor we manage the full scope of work: scheduling, trade coordination, inspections and handover. Unlike many general contractors, we also self-perform the core trades with our own crews, so fewer subcontractors stand between you and the result.',
     ],
     image: assetPath('/service-site-coordination.jpg'),
@@ -106,7 +106,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Are you a licensed and insured general contractor?',
         answer:
-          'Yes. MC Pro, INC. is licensed and insured in Illinois, and our MEP team is licensed in Illinois and Wisconsin.',
+          'Yes. MC PRO, Inc. is licensed and insured in Illinois, and our MEP team is licensed in Illinois and Wisconsin.',
       },
       {
         question: 'Do you work in the city of Chicago or only the suburbs?',
@@ -134,7 +134,7 @@ export const servicePages: ServicePage[] = [
       'Commercial general contractor for remodeling and construction in the Chicago area: restaurants, retail, banks, hotels, industrial. Night work available.',
     h1: 'Commercial Remodeling and Construction Contractor for the Chicago Area',
     intro: [
-      'MC Pro, INC. is a commercial general contractor based in Streamwood, Illinois, founded in 2018. For 20 years our team has remodeled and built out spaces for businesses that cannot afford to close: quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities.',
+      'MC PRO, Inc. is a commercial general contractor based in Streamwood, Illinois, founded in 2018. For 20 years our team has remodeled and built out spaces for businesses that cannot afford to close: quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities.',
       'We take on the full scope of work as general contractor or deliver individual trade packages, and we self-perform the core trades with our own crews. That means fewer handoffs, consistent quality and a schedule we control.',
     ],
     image: assetPath('/service-commercial-buildout.jpg'),
@@ -223,7 +223,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Are you licensed and insured?',
         answer:
-          'Yes. MC Pro, INC. is licensed and insured in Illinois, and our MEP team is licensed in Illinois and Wisconsin.',
+          'Yes. MC PRO, Inc. is licensed and insured in Illinois, and our MEP team is licensed in Illinois and Wisconsin.',
       },
       {
         question: 'Where do you work?',
@@ -241,7 +241,7 @@ export const servicePages: ServicePage[] = [
       'Quick-service restaurant remodels done overnight so you stay open. 200+ restaurant remodels across 14 brand decor packages. Streamwood, IL.',
     h1: 'Restaurant Remodeling Contractor That Keeps You Open',
     intro: [
-      'Restaurant remodeling is the core of our business. MC Pro, INC. has completed more than 200 remodels for a national quick-service restaurant brand, across 14 brand decor packages.',
+      'Restaurant remodeling is the core of our business. MC PRO, Inc. has completed more than 200 remodels for a national quick-service restaurant brand, across 14 brand decor packages.',
       'We build around your operating hours. Front-of-house remodels have been completed in three overnight shifts while the restaurant stayed open every day.',
     ],
     image: assetPath('/service-commercial-restaurant.jpg'),
@@ -298,7 +298,7 @@ export const servicePages: ServicePage[] = [
       'Retail store, pharmacy and bank remodels in the Chicago area, phased so you keep serving customers. Self-performed trades. Call (312) 405-0066.',
     h1: 'Retail, Pharmacy and Bank Remodeling',
     intro: [
-      'MC Pro, INC. remodels retail stores, pharmacies, banks and other service locations across the Chicago area. We phase the work so your doors stay open and your customers can still shop.',
+      'MC PRO, Inc. remodels retail stores, pharmacies, banks and other service locations across the Chicago area. We phase the work so your doors stay open and your customers can still shop.',
       'Our own crews self-perform demolition, carpentry, ceilings, flooring, electrical and finishes, so one contractor is accountable for quality and schedule.',
     ],
     image: assetPath('/project-office-1.jpg'),
@@ -345,7 +345,7 @@ export const servicePages: ServicePage[] = [
       'Hotel and hospitality renovations in Illinois and Wisconsin, phased around your guests with night and after-hours work. Streamwood, IL contractor.',
     h1: 'Hotel and Hospitality Renovation Contractor',
     intro: [
-      'MC Pro, INC. renovates hotels and hospitality spaces in Illinois and Wisconsin. We plan the work around your guests: phased areas, night and after-hours shifts and clean, safe spaces every morning.',
+      'MC PRO, Inc. renovates hotels and hospitality spaces in Illinois and Wisconsin. We plan the work around your guests: phased areas, night and after-hours shifts and clean, safe spaces every morning.',
       'We self-perform the trades that matter most in guest-facing spaces, from demolition and carpentry to ceilings, tile, finishes and electrical.',
     ],
     image: assetPath('/project-restaurant-1.jpg'),
@@ -392,7 +392,7 @@ export const servicePages: ServicePage[] = [
       'Overnight and after-hours remodeling so your business stays open. Phased work, inspections between shifts, daily photo updates. Chicago area.',
     h1: 'Night and After-Hours Commercial Construction',
     intro: [
-      'Closing for a remodel costs revenue and customers. MC Pro, INC. schedules demolition and noisy work overnight and after hours, so restaurants, stores, banks and hotels stay open while we build.',
+      'Closing for a remodel costs revenue and customers. MC PRO, Inc. schedules demolition and noisy work overnight and after hours, so restaurants, stores, banks and hotels stay open while we build.',
       'Front-of-house restaurant remodels have been completed in three overnight shifts while the restaurant stayed open every day.',
     ],
     image: assetPath('/featured-office-complex.jpg'),
@@ -435,14 +435,14 @@ export const servicePages: ServicePage[] = [
     navLabel: 'Service Area',
     metaTitle: 'Service Area: Chicago Area, Illinois & Wisconsin | MC Pro',
     metaDescription:
-      'MC Pro, INC. is based in Streamwood, IL and serves the Chicago metropolitan area, Illinois and Wisconsin.',
+      'MC PRO, Inc. is based in Streamwood, IL and serves the Chicago metropolitan area, Illinois and Wisconsin.',
     h1: 'Commercial Contractor Serving the Chicago Area, Illinois and Wisconsin',
     intro: [
-      'MC Pro, INC. is based at 724 Bonded Parkway in Streamwood, Illinois, in the northwest suburbs of Chicago. From here we serve the Chicago metropolitan area, Illinois and Wisconsin.',
+      'MC PRO, Inc. is based at 724 Bonded Parkway in Streamwood, Illinois, in the northwest suburbs of Chicago. From here we serve the Chicago metropolitan area, Illinois and Wisconsin.',
       'Our own trucks, vans, trailers and tools let us mobilize quickly, bring the dumpster and materials to site and start on schedule.',
     ],
     mapEmbedUrl: 'https://www.google.com/maps/d/embed?mid=1PR2JA-EC8XMg0hRXi9J28pel8Mp9TAk&ll=42.30%2C-87.53&z=8',
-    mapTitle: 'MC Pro, INC. service area map: Chicago area, northern Illinois, southeastern Wisconsin and northwest Indiana',
+    mapTitle: 'MC PRO, Inc. service area map: Chicago area, northern Illinois, southeastern Wisconsin and northwest Indiana',
     sections: [
       {
         heading: 'Where we work',

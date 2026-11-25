@@ -22,7 +22,7 @@ describe('static SEO assets', () => {
 
   it('has MC Pro title and geo meta in index.html', () => {
     const html = readFileSync(resolve(root, 'index.html'), 'utf8');
-    expect(html).toContain('MC Pro, INC.');
+    expect(html).toContain('MC PRO, Inc.');
     expect(html).toContain('Streamwood');
     expect(html).toContain('geo.region');
     expect(html).toContain('application/ld+json');
@@ -52,7 +52,7 @@ describe('static SEO assets', () => {
 
   it('ships llms.txt with company facts', () => {
     const llms = readFileSync(resolve(root, 'public/llms.txt'), 'utf8');
-    expect(llms).toContain('MC Pro, INC.');
+    expect(llms).toContain('MC PRO, Inc.');
     expect(llms).toContain('724 Bonded Parkway');
     expect(llms).toContain('(312) 405-0066');
   });
