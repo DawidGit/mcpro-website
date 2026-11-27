@@ -38,6 +38,33 @@ export function Contact() {
   const headingRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
+  const [mapRequested, setMapRequested] = useState(false);
+
+  // Start loading the Google map well before the contact section scrolls into view, and open
+  // the connections its iframe needs, so the map is ready when the visitor reaches it.
+  // (Native loading="lazy" waits until the iframe is nearly on screen.)
+  useEffect(() => {
+    const el = mapRef.current;
+    if (!el || mapRequested) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
+        for (const origin of ['https://maps.gstatic.com', 'https://maps.googleapis.com', 'https://fonts.gstatic.com']) {
+          const link = document.createElement('link');
+          link.rel = 'preconnect';
+          link.href = origin;
+          link.crossOrigin = '';
+          document.head.appendChild(link);
+        }
+        setMapRequested(true);
+      },
+      { rootMargin: '1500px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [mapRequested]);
   const [formState, setFormState] = useState<ContactFormState>(EMPTY_FORM);
   const [botCheck, setBotCheck] = useState(false);
   const [captchaToken, setCaptchaToken] = useState('');
@@ -279,18 +306,24 @@ export function Contact() {
 
             {/* Map */}
             <div className="contact-item bg-forest-mid/45 rounded-lg shadow-sm border border-white/10 overflow-hidden opacity-0">
-              <div className="aspect-video w-full">
-                <iframe
-                  src={contactConfig.mapEmbedUrl}
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="MC PRO, Inc. office location — 724 Bonded Parkway, Streamwood, IL"
-                  className="w-full h-full"
-                />
+              <div ref={mapRef} className="relative aspect-video w-full">
+                {/* Shown until the map paints over it */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white/70 text-sm font-body">
+                  <MapPin className="w-6 h-6" strokeWidth={1.5} />
+                  <span>724 Bonded Parkway, Streamwood, IL</span>
+                </div>
+                {mapRequested && (
+                  <iframe
+                    src={contactConfig.mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="MC PRO, Inc. office location — 724 Bonded Parkway, Streamwood, IL"
+                    className="relative w-full h-full"
+                  />
+                )}
               </div>
             </div>
           </div>

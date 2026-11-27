@@ -486,6 +486,6 @@ export const contactConfig: ContactConfig = {
   formTitle: "Request a Consultation",
   formDescription: "Fill out the form below and our team will respond within 24 business hours.",
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=MC+PRO,+INC,+724+Bonded+Pkwy,+Streamwood,+IL+60107&z=16&output=embed",
+    "https://www.google.com/maps?q=MC+PRO,+INC,+724+Bonded+Pkwy,+Streamwood,+IL+60107&z=16&output=embed",
   turnstileSiteKey: import.meta.env.VITE_TURNSTILE_SITE_KEY ?? "",
 };
