@@ -14,7 +14,7 @@ export function SiteHeader() {
     <header className="bg-forest-dark text-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between gap-6">
         <a href="/" aria-label="MC PRO, Inc. home">
-          <img src={logoSrc} alt="MC PRO, Inc." className="h-10 md:h-12 w-auto" width={160} height={48} />
+          <img src={logoSrc} alt="MC PRO, Inc." className="h-10 md:h-12 w-auto" width={560} height={160} />
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm font-body text-white/80">
           <a href="/#services" className="hover:text-white transition-colors">Services</a>

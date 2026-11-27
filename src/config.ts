@@ -439,10 +439,11 @@ export const footerConfig: FooterConfig = {
   ],
   servicesLabel: "Services",
   serviceLinks: servicePages.map((page) => ({ label: page.navLabel, href: `/${page.slug}` })),
-  // Hidden until MC Pro has its own profiles. To restore, set the label to "Follow Us" and add
-  // e.g. { iconName: "Linkedin", href: "https://www.linkedin.com/company/<profile>", label: "LinkedIn" }
-  socialLabel: "",
-  socialLinks: [],
+  socialLabel: "Follow Us",
+  // Keep in sync with siteConfig.sameAs
+  socialLinks: [
+    { iconName: "Linkedin", href: "https://www.linkedin.com/company/144194968/", label: "MC PRO, Inc. on LinkedIn" },
+  ],
   tagline: "",
   copyright: "© 2026 MC PRO, Inc. All rights reserved.",
   // Add legal pages here once they exist (e.g. { label: "Privacy Policy", href: "/privacy" })

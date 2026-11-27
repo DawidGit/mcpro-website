@@ -3,6 +3,7 @@ import { responsiveImages } from './responsiveImages';
 /**
  * Returns src/srcSet/sizes for an <img>: the original JPG stays as `src` (fallback) and the
  * generated WebP variants (scripts/build-responsive-images.sh) are offered via srcSet.
+ * width/height are the original's intrinsic size, so the browser can reserve the aspect ratio.
  */
 export function responsiveImageProps(src: string, sizes: string) {
   const base = import.meta.env.BASE_URL;
@@ -14,5 +15,7 @@ export function responsiveImageProps(src: string, sizes: string) {
     src,
     srcSet: `${prefix}${variant.small} 640w, ${prefix}${variant.large} ${variant.largeWidth}w`,
     sizes,
+    width: variant.width,
+    height: variant.height,
   };
 }

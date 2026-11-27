@@ -249,8 +249,12 @@
     }
     </script>
 
-    <!-- Preload critical assets (AVIF hero for modern browsers; PNG kept as <img> fallback) -->
-    <link rel="preload" as="image" href="%BASE_URL%hero-construction2.avif" type="image/avif" fetchpriority="high" />
+    <!-- Preload the hero image the <picture> in Hero.tsx will pick: full AVIF on wide screens,
+         the responsive WebP set below 1280px (keeps phones from downloading 151 KB before CSS). -->
+    <link rel="preload" as="image" href="%BASE_URL%hero-construction2.avif" type="image/avif" media="(min-width: 1280px)" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" media="(max-width: 1279px)" fetchpriority="high"
+      imagesrcset="%BASE_URL%hero-construction2-480.webp 480w, %BASE_URL%hero-construction2-768.webp 768w, %BASE_URL%hero-construction2-1280.webp 1280w, %BASE_URL%hero-construction2-1920.webp 1920w"
+      imagesizes="100vw" />
   </head>
   <body>
     <div id="root"></div>

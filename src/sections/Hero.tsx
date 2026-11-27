@@ -153,8 +153,11 @@ export function Hero() {
           <picture>
             {isConstructionHero && (
               <>
+                {/* Full-size AVIF only on wide screens; phones and tablets get the smaller WebP set
+                    (the 2752px AVIF is 151 KB vs 41-79 KB WebP at 480-768px). Preloads in index.html match. */}
                 <source
                   type="image/avif"
+                  media="(min-width: 1280px)"
                   srcSet={`${import.meta.env.BASE_URL}hero-construction2.avif`}
                 />
                 <source
@@ -172,6 +175,8 @@ export function Hero() {
             <img
               src={heroConfig.heroImage}
               alt={heroConfig.heroImageAlt}
+              width={2752}
+              height={1536}
               className="w-full h-full object-cover object-[center_40%]"
               loading="eager"
               fetchPriority="high"
@@ -223,6 +228,8 @@ export function Hero() {
           <img
             src={navLogoSrc}
             alt={heroConfig.brandName || 'Company logo'}
+            width={560}
+            height={160}
             className="h-16 md:h-20 w-auto object-contain"
             loading="eager"
           />

@@ -461,6 +461,21 @@ export const servicePages: ServicePage[] = [
         ],
       },
       {
+        heading: 'Counties and regions',
+        body: [
+          'In Illinois we work across Cook, DuPage, Kane, Lake, McHenry and Will counties, and further out in Kendall, DeKalb and Winnebago counties. We also take projects in southeastern Wisconsin and northwest Indiana.',
+        ],
+      },
+      {
+        heading: 'How we run jobs away from our yard',
+        bullets: [
+          'Our own trucks, trailers and tools, so crews arrive with what the job needs',
+          'Self-performed core trades, so fewer outside subcontractors to schedule on site',
+          'Night and after-hours shifts, so your location stays open',
+          'Inspections coordinated between shifts and photo progress updates after every shift',
+        ],
+      },
+      {
         heading: 'Office and hours',
         body: [
           '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 8:00 AM to 4:00 PM, Saturday by appointment. Call (773) 550-0250 or email office@mcprogc.com.',
@@ -472,6 +487,21 @@ export const servicePages: ServicePage[] = [
         question: 'Do you work outside the Chicago area?',
         answer:
           'Yes. We work across Illinois and Wisconsin, especially on multi-location restaurant and retail programs.',
+      },
+      {
+        question: 'Do you only work in the cities listed on this page?',
+        answer:
+          'No. The list shows where we work most often. We also take projects in the communities around them; call (773) 550-0250 if your location is not listed.',
+      },
+      {
+        question: 'Can you work nights outside the Chicago area?',
+        answer:
+          'Yes. Night and after-hours shifts are available across our service area, so restaurants, stores and hotels can stay open during the remodel.',
+      },
+      {
+        question: 'How do we get a quote for a project outside the Chicago area?',
+        answer:
+          'Email your drawings or bid package to office@mcprogc.com or call (773) 550-0250. We review the scope and reply with a proposal and schedule.',
       },
     ],
     related: ['general-contractor-chicago', 'commercial-remodeling', 'restaurant-remodeling', 'retail-remodeling'],

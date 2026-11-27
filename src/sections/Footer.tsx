@@ -57,6 +57,8 @@ export function Footer() {
             <img
               src={footerLogoSrc}
               alt="MC PRO, Inc. logo"
+              width={428}
+              height={120}
               className="h-20 md:h-24 w-auto object-contain mx-auto md:mx-0 md:col-start-2"
               loading="lazy"
             />
@@ -91,6 +93,28 @@ export function Footer() {
                   {footerConfig.locationText}
                 </p>
               )}
+              {footerConfig.socialLabel && (
+                <p className="mt-6 text-[rgb(26_26_26)] text-sm font-body uppercase tracking-widest mb-4">
+                  {footerConfig.socialLabel}
+                </p>
+              )}
+              {footerConfig.socialLinks.length > 0 && (
+                <div className="flex items-center justify-center md:justify-start gap-4">
+                  {footerConfig.socialLinks.map((social) => {
+                    const Icon = iconMap[social.iconName] || Mail;
+                    return (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        aria-label={social.label}
+                        className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-[rgb(26_26_26)] hover:bg-forest-dark hover:text-white transition-all duration-300"
+                      >
+                        <Icon className="w-5 h-5" strokeWidth={1.5} />
+                      </a>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* Navigation */}
@@ -115,30 +139,8 @@ export function Footer() {
               </div>
             )}
 
-            {/* Social Links */}
+            {/* Services */}
             <div className="flex flex-col items-center md:items-start">
-              {footerConfig.socialLabel && (
-                <p className="text-[rgb(26_26_26)] text-sm font-body uppercase tracking-widest mb-4">
-                  {footerConfig.socialLabel}
-                </p>
-              )}
-              {footerConfig.socialLinks.length > 0 && (
-                <div className="flex items-center justify-center md:justify-start gap-4">
-                  {footerConfig.socialLinks.map((social) => {
-                    const Icon = iconMap[social.iconName] || Mail;
-                    return (
-                      <a
-                        key={social.label}
-                        href={social.href}
-                        aria-label={social.label}
-                        className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-[rgb(26_26_26)] hover:bg-forest-dark hover:text-white transition-all duration-300"
-                      >
-                        <Icon className="w-5 h-5" strokeWidth={1.5} />
-                      </a>
-                    );
-                  })}
-                </div>
-              )}
               {footerConfig.serviceLinks.length > 0 && (
                 <>
                   <p className="text-[rgb(26_26_26)] text-sm font-body uppercase tracking-widest mb-4">
