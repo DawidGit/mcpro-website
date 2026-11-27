@@ -46,7 +46,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'general-contractor-chicago',
     navLabel: 'General Contractor Chicago',
-    metaTitle: 'General Contractor in Chicago & NW Suburbs | MC Pro',
+    metaTitle: 'General Contractor in Chicago & NW Suburbs | MC PRO',
     metaDescription:
       'Licensed and insured general contractor for Chicago and the northwest suburbs. Commercial remodeling, self-performed trades, night work. Founded in 2018.',
     h1: 'General Contractor in Chicago and the Northwest Suburbs',
@@ -55,13 +55,13 @@ export const servicePages: ServicePage[] = [
       'As your general contractor we manage the full scope of work: scheduling, trade coordination, inspections and handover. Unlike many general contractors, we also self-perform the core trades with our own crews, so fewer subcontractors stand between you and the result.',
     ],
     image: assetPath('/service-site-coordination.jpg'),
-    imageAlt: 'MC Pro project lead coordinating trades on a commercial job site',
+    imageAlt: 'MC PRO project lead coordinating trades on a commercial job site',
     serviceType: 'General contracting',
     sections: [
       {
         heading: 'What a general contractor does for you',
         body: [
-          'A general contractor is the one company responsible for your project from first drawing to final punch list. At MC Pro that covers pre-construction, procurement, the work itself and the paperwork in between.',
+          'A general contractor is the one company responsible for your project from first drawing to final punch list. At MC PRO that covers pre-construction, procurement, the work itself and the paperwork in between.',
         ],
         bullets: [
           'Drawing verification, shop drawings and schedule planning',
@@ -129,7 +129,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'commercial-remodeling',
     navLabel: 'Commercial Remodeling',
-    metaTitle: 'Commercial Remodeling & General Contractor, Chicago | MC Pro',
+    metaTitle: 'Commercial Remodeling & General Contractor, Chicago | MC PRO',
     metaDescription:
       'Commercial general contractor for remodeling and construction in the Chicago area: restaurants, retail, banks, hotels, industrial. Night work available.',
     h1: 'Commercial Remodeling and Construction Contractor for the Chicago Area',
@@ -236,7 +236,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'restaurant-remodeling',
     navLabel: 'Restaurant Remodeling',
-    metaTitle: 'Restaurant Remodeling Contractor in Illinois | MC Pro',
+    metaTitle: 'Restaurant Remodeling Contractor in Illinois | MC PRO',
     metaDescription:
       'Quick-service restaurant remodels done overnight so you stay open. 200+ restaurant remodels across 14 brand decor packages. Streamwood, IL.',
     h1: 'Restaurant Remodeling Contractor That Keeps You Open',
@@ -293,7 +293,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'retail-remodeling',
     navLabel: 'Retail & Pharmacy Remodeling',
-    metaTitle: 'Retail & Pharmacy Remodeling Contractor | MC Pro',
+    metaTitle: 'Retail & Pharmacy Remodeling Contractor | MC PRO',
     metaDescription:
       'Retail store, pharmacy and bank remodels in the Chicago area, phased so you keep serving customers. Self-performed trades. Call (312) 405-0066.',
     h1: 'Retail, Pharmacy and Bank Remodeling',
@@ -340,7 +340,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'hospitality-remodeling',
     navLabel: 'Hotel & Hospitality Renovation',
-    metaTitle: 'Hotel & Hospitality Renovation Contractor, IL | MC Pro',
+    metaTitle: 'Hotel & Hospitality Renovation Contractor, IL | MC PRO',
     metaDescription:
       'Hotel and hospitality renovations in Illinois and Wisconsin, phased around your guests with night and after-hours work. Streamwood, IL contractor.',
     h1: 'Hotel and Hospitality Renovation Contractor',
@@ -387,7 +387,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'night-work',
     navLabel: 'Night & After-Hours Work',
-    metaTitle: 'Night & After-Hours Commercial Construction | MC Pro',
+    metaTitle: 'Night & After-Hours Commercial Construction | MC PRO',
     metaDescription:
       'Overnight and after-hours remodeling so your business stays open. Phased work, inspections between shifts, daily photo updates. Chicago area.',
     h1: 'Night and After-Hours Commercial Construction',
@@ -433,7 +433,7 @@ export const servicePages: ServicePage[] = [
   {
     slug: 'service-area',
     navLabel: 'Service Area',
-    metaTitle: 'Service Area: Chicago Area, Illinois & Wisconsin | MC Pro',
+    metaTitle: 'Service Area: Chicago Area, Illinois & Wisconsin | MC PRO',
     metaDescription:
       'MC PRO, Inc. is based in Streamwood, IL and serves the Chicago metropolitan area, Illinois and Wisconsin.',
     h1: 'Commercial Contractor Serving the Chicago Area, Illinois and Wisconsin',

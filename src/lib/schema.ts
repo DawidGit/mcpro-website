@@ -80,7 +80,7 @@ export function businessNode() {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'MC Pro Construction Services',
+      name: 'MC PRO Construction Services',
       itemListElement: servicesConfig.services.map((service, index) => ({
         '@type': 'Offer',
         position: index + 1,

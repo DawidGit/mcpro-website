@@ -30,7 +30,7 @@ export const siteConfig: SiteConfig = {
   language: "en",
   siteName: "MC PRO, Inc.",
   legalName: "MC PRO, Inc.",
-  siteTitle: "Commercial Remodeling Contractor Streamwood, IL | MC Pro",
+  siteTitle: "Commercial Remodeling Contractor Streamwood, IL | MC PRO",
   siteDescription:
     "Streamwood, IL commercial remodeling contractor for restaurants, retail & hospitality. Self-performed trades and night work. Call (312) 405-0066.",
   businessDescription:
@@ -106,17 +106,17 @@ export const introGridConfig: IntroGridConfig = {
   titleLine1: "",
   titleLine2: "",
   descriptionHeading: "Building Since 2006",
-  description: `At Mc Pro, our mission is to deliver comprehensive, high-quality construction services that combine two decades of experience with craftsmanship, reliability, and innovation. We are dedicated to creating spaces that are not only visually impactful, but also functional, durable, and built to stand the test of time.
+  description: `MC PRO, Inc. is a commercial remodeling general contractor in Streamwood, Illinois, founded in 2018, with a team that has been building since 2006. We remodel quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities across the Chicago area, Illinois and Wisconsin — with our own crews and night shifts, so clients stay open.
 
 Our team has been building since 2006 — first under earlier company names, and since 2018 as MC PRO, Inc. We started as a trade subcontractor on commercial projects — stone and facades, tile, concrete, masonry restoration, carpentry, ceilings and painting — while remodeling our own residential investment properties. That hands-on experience across trades grew into a team that takes on entire projects, from demolition to final punch.
 
 Today, we deliver remodels for restaurants, retail stores, pharmacies, banks, hotels and industrial facilities — in full scope of work or by individual trades. Many of our projects are completed at night or in phases, so our clients' businesses stay open while we work. Our goal is to simplify construction for our clients by acting as a single, reliable partner — coordinating every trade, material order and inspection from start to finish.
 
-Our slogan, "Quality on Time," is more than just words — it defines how we operate every day. At Mc Pro, we truly stand behind it. We are committed to meeting deadlines without compromising craftsmanship, ensuring that every project is completed efficiently, professionally, and to the highest standard. We take pride in delivering exactly what we promise, when we promise it.
+Our slogan, "Quality on Time," is more than just words — it defines how we operate every day. At MC PRO, we truly stand behind it. We are committed to meeting deadlines without compromising craftsmanship, ensuring that every project is completed efficiently, professionally, and to the highest standard. We take pride in delivering exactly what we promise, when we promise it.
 
 We are committed to maintaining the highest standards of workmanship, clear communication, and accountability at every stage. We believe that strong relationships, transparency, and consistency are the key to successful projects and long-term partnerships.
 
-At Mc Pro, we don't just build structures — we build spaces that support businesses, enhance everyday living, and reflect the vision of our clients. Every project we take on is approached with precision, professionalism, and pride.`,
+At MC PRO, we don't just build structures — we build spaces that support businesses, enhance everyday living, and reflect the vision of our clients. Every project we take on is approached with precision, professionalism, and pride.`,
   descriptionCollapsedParagraphCount: 2,
   descriptionReadMoreLabel: "Read more",
   descriptionReadLessLabel: "Show less",
@@ -177,7 +177,7 @@ export const servicesConfig: ServicesConfig = {
       iconName: "Wrench",
       title: "Self-Performed Trades",
       image: assetPath("/service-crew-plans.jpg"),
-      imageAlt: "MC Pro crew lead reviewing drawings on a framing job",
+      imageAlt: "MC PRO crew lead reviewing drawings on a framing job",
       description:
         "Our own crews handle the trades that drive quality and schedule, without relying on a chain of outside subcontractors.",
       bullets: [
@@ -210,7 +210,7 @@ export const servicesConfig: ServicesConfig = {
       iconName: "ClipboardList",
       title: "General Contracting",
       image: assetPath("/service-site-coordination.jpg"),
-      imageAlt: "MC Pro team coordinating on a commercial building site",
+      imageAlt: "MC PRO team coordinating on a commercial building site",
       description:
         "One accountable partner for the whole project — from mobilization to final punch list.",
       bullets: [
@@ -243,10 +243,8 @@ export const servicesConfig: ServicesConfig = {
       description:
         "We remodel our own investment properties and bring the same standards to homeowners' projects.",
       bullets: [
-        "Full home remodeling",
         "Kitchen & bathroom renovations",
         "Investment property renovations",
-        "Interior finishes & tile",
       ],
     },
   ],
@@ -314,7 +312,7 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
     },
     {
       image: assetPath("/feature-progress-updates.jpg"),
-      imageAlt: "MC Pro site lead photographing progress on a commercial interior build-out",
+      imageAlt: "MC PRO site lead photographing progress on a commercial interior build-out",
       title: "Daily Progress Updates",
       description:
         "Photo updates after every shift and inspections coordinated as we go, so you always know where the project stands.",
@@ -355,7 +353,7 @@ export const faqConfig: FAQConfig = {
     {
       id: "faq-1",
       question: "What types of projects do you handle?",
-      answer: "We focus on commercial remodeling — quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities — as well as residential remodeling. Projects range from overnight front-of-house upgrades to full building expansions.",
+      answer: "We focus on commercial remodeling — quick-service restaurants, retail stores and pharmacies, banks, hotels and industrial facilities. Projects range from overnight front-of-house upgrades to full building expansions. We also take on selected residential remodels.",
     },
     {
       id: "faq-2",

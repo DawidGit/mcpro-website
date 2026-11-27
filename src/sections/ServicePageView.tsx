@@ -1,5 +1,5 @@
 import { ArrowRight, Check, Phone } from 'lucide-react';
-import { contactConfig } from '../config';
+import { contactConfig, whyChooseMeConfig } from '../config';
 import { responsiveImageProps } from '../lib/responsiveImage';
 import { pageBySlug, type ServicePage } from '../pages';
 import { Footer } from './Footer';
@@ -108,6 +108,24 @@ export function ServicePageView({ page }: { page: ServicePage }) {
       )}
 
       <main className="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24 space-y-16">
+        {page.serviceType && (
+          <section aria-labelledby="by-the-numbers">
+            <h2 id="by-the-numbers" className="font-sans font-bold tracking-tight text-2xl md:text-3xl mb-6">
+              {whyChooseMeConfig.statsLabel}
+            </h2>
+            <dl className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {whyChooseMeConfig.stats.map((stat) => (
+                <div key={stat.label} className="rounded-2xl border border-softblack/12 bg-white px-5 py-5">
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd className="font-sans font-extrabold text-3xl md:text-4xl text-forest-dark">
+                    {stat.text ?? `${stat.value}${stat.suffix}`}
+                  </dd>
+                  <dd className="mt-2 font-body text-sm text-softblack/70 leading-snug">{stat.label}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
         {page.sections.map((section) => (
           <section key={section.heading}>
             <h2 className="font-sans font-bold tracking-tight text-2xl md:text-3xl mb-5">{section.heading}</h2>
@@ -172,7 +190,7 @@ export function ServicePageView({ page }: { page: ServicePage }) {
 
       <section className="bg-forest-dark text-white">
         <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-20 text-center">
-          <h2 className="font-sans font-bold tracking-tight text-3xl md:text-4xl">Talk to MC Pro about your project</h2>
+          <h2 className="font-sans font-bold tracking-tight text-3xl md:text-4xl">Talk to MC PRO about your project</h2>
           <p className="mt-4 font-body text-white/70 text-base md:text-lg">
             Call{' '}
             <a href={phoneHref} data-track="cta-text" className="text-white underline underline-offset-4 decoration-white/40 hover:decoration-white">

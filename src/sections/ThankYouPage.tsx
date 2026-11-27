@@ -41,7 +41,7 @@ export function ThankYouPage() {
             src={handshake}
             srcSet={`${handshakeBase}-640.webp 640w, ${handshakeBase}-1280.webp 1280w, ${handshakeBase}-2000.webp 2000w`}
             sizes="100vw"
-            alt="MC Pro project lead shaking hands with a client on a commercial construction site"
+            alt="MC PRO project lead shaking hands with a client on a commercial construction site"
             width={1280}
             height={714}
             fetchPriority="high"
