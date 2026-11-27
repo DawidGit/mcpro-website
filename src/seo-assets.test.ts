@@ -54,7 +54,7 @@ describe('static SEO assets', () => {
     const llms = readFileSync(resolve(root, 'public/llms.txt'), 'utf8');
     expect(llms).toContain('MC PRO, Inc.');
     expect(llms).toContain('724 Bonded Parkway');
-    expect(llms).toContain('(312) 405-0066');
+    expect(llms).toContain('(773) 550-0250');
   });
 
   it('keeps the meta description short enough for search results', () => {

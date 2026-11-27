@@ -121,7 +121,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'How do we get a quote?',
         answer:
-          'Call (312) 405-0066, email office@mcprogc.com or send your bid package. We review drawings and scope and reply with a proposal and schedule.',
+          'Call (773) 550-0250, email office@mcprogc.com or send your bid package. We review drawings and scope and reply with a proposal and schedule.',
       },
     ],
     related: ['commercial-remodeling', 'restaurant-remodeling', 'night-work', 'service-area'],
@@ -218,7 +218,7 @@ export const servicePages: ServicePage[] = [
       {
         question: 'Can we send you a bid package?',
         answer:
-          'Yes. Email your drawings or bid package to office@mcprogc.com or call (312) 405-0066. We review the scope and reply with a proposal and schedule.',
+          'Yes. Email your drawings or bid package to office@mcprogc.com or call (773) 550-0250. We review the scope and reply with a proposal and schedule.',
       },
       {
         question: 'Are you licensed and insured?',
@@ -295,7 +295,7 @@ export const servicePages: ServicePage[] = [
     navLabel: 'Retail & Pharmacy Remodeling',
     metaTitle: 'Retail & Pharmacy Remodeling Contractor | MC PRO',
     metaDescription:
-      'Retail store, pharmacy and bank remodels in the Chicago area, phased so you keep serving customers. Self-performed trades. Call (312) 405-0066.',
+      'Retail store, pharmacy and bank remodels in the Chicago area, phased so you keep serving customers. Self-performed trades. Call (773) 550-0250.',
     h1: 'Retail, Pharmacy and Bank Remodeling',
     intro: [
       'MC PRO, Inc. remodels retail stores, pharmacies, banks and other service locations across the Chicago area. We phase the work so your doors stay open and your customers can still shop.',
@@ -463,7 +463,7 @@ export const servicePages: ServicePage[] = [
       {
         heading: 'Office and hours',
         body: [
-          '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 8:00 AM to 4:00 PM, Saturday by appointment. Call (312) 405-0066 or email office@mcprogc.com.',
+          '724 Bonded Parkway, Streamwood, IL 60107. Monday to Friday 8:00 AM to 4:00 PM, Saturday by appointment. Call (773) 550-0250 or email office@mcprogc.com.',
         ],
       },
     ],

@@ -32,9 +32,9 @@ export const siteConfig: SiteConfig = {
   legalName: "MC PRO, Inc.",
   siteTitle: "Commercial Remodeling Contractor Streamwood, IL | MC PRO",
   siteDescription:
-    "Streamwood, IL commercial remodeling contractor for restaurants, retail & hospitality. Self-performed trades and night work. Call (312) 405-0066.",
+    "Streamwood, IL commercial remodeling contractor for restaurants, retail & hospitality. Self-performed trades and night work. Call (773) 550-0250.",
   businessDescription:
-    "MC PRO, Inc. is a Streamwood, Illinois general contractor founded in 2018, with a team that brings 20 years of experience in commercial remodeling — restaurants, retail, hospitality and industrial — with self-performed trades and night work that keeps your business open. Call (312) 405-0066.",
+    "MC PRO, Inc. is a Streamwood, Illinois general contractor founded in 2018, with a team that brings 20 years of experience in commercial remodeling — restaurants, retail, hospitality and industrial — with self-performed trades and night work that keeps your business open. Call (773) 550-0250.",
   canonicalUrl: "https://mcprogc.com",
   ogImage: "https://mcprogc.com/og-image.jpg",
   logoUrl: "https://mcprogc.com/mc-pro-logo.png",
@@ -48,7 +48,11 @@ export const siteConfig: SiteConfig = {
   latitude: 42.0174796,
   longitude: -88.1488804,
   googleMapsUrl: "https://maps.app.goo.gl/3nNP5sw82XaXk8jT9",
-  sameAs: ["https://mcprogc.com", "https://maps.app.goo.gl/3nNP5sw82XaXk8jT9"],
+  sameAs: [
+    // Google Business Profile by CID (same profile as googleMapsUrl, entity /g/11z_69tf8z)
+    "https://www.google.com/maps?cid=3843436488364731680",
+    "https://www.linkedin.com/company/144194968/",
+  ],
 };
 
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
@@ -469,8 +473,8 @@ export const contactConfig: ContactConfig = {
   titleRegular: "Request a",
   titleItalic: "Quote",
   description:
-    "Ready to start your construction project with MC PRO, Inc. in Streamwood, IL? Call (312) 405-0066 or email office@mcprogc.com for a consultation.",
-  phone: "(312) 405-0066",
+    "Ready to start your construction project with MC PRO, Inc. in Streamwood, IL? Call (773) 550-0250 or email office@mcprogc.com for a consultation.",
+  phone: "(773) 550-0250",
   phoneLabel: "Phone",
   email: "office@mcprogc.com",
   emailLabel: "Email",

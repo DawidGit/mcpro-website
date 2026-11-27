@@ -167,7 +167,7 @@ export function Contact() {
     } else {
       setSubmitStatus('error');
       setStatusMessage(
-        `${result.message} You can also reach us at (312) 405-0066 or office@mcprogc.com.`
+        `${result.message} You can also reach us at (773) 550-0250 or office@mcprogc.com.`
       );
       // A consumed token can't be reused — get a fresh challenge.
       setCaptchaToken('');
@@ -351,9 +351,9 @@ export function Contact() {
                     type="tel"
                     value={formState.phone}
                     onChange={handleInputChange}
-                    placeholder="(312) 405-0066"
+                    placeholder="(773) 550-0250"
                     pattern={PHONE_PATTERN}
-                    title="Please enter a valid phone number, e.g. (312) 405-0066."
+                    title="Please enter a valid phone number, e.g. (773) 550-0250."
                     className="bg-forest-dark/60 border-white/15 text-white placeholder:text-white/40 focus:border-white/35 focus:ring-white/20"
                   />
                 </div>

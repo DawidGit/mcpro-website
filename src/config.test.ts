@@ -29,7 +29,7 @@ describe('siteConfig (SEO / GEO)', () => {
 
 describe('contact & footer NAP consistency', () => {
   it('uses the production phone and email', () => {
-    expect(contactConfig.phone).toBe('(312) 405-0066');
+    expect(contactConfig.phone).toBe('(773) 550-0250');
     expect(contactConfig.email).toBe('office@mcprogc.com');
     expect(footerConfig.email).toBe(contactConfig.email);
   });

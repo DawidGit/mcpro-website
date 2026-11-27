@@ -134,7 +134,7 @@ export function Turnstile({
     return (
       <p className="text-sm font-body text-white/60" role="alert">
         Spam protection failed to load. Please refresh the page or contact us directly at
-        (312) 405-0066.
+        (773) 550-0250.
       </p>
     );
   }
